@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, useGLTF, OrthographicCamera, Environment } from '@react-three/drei'
+import { useGLTF, OrthographicCamera, Environment, Loader } from '@react-three/drei'
 import * as THREE from 'three'
 
 function Model(props) {
@@ -120,10 +120,13 @@ function Scene() {
 
 function App() {
   return (
-    <Canvas>
-        <Scene />
-        <OrthographicCamera makeDefault />
-    </Canvas>
+    <>
+        <Canvas>
+            <Scene />
+            <OrthographicCamera makeDefault />
+        </Canvas>
+        <Loader />
+    </>
   )
 }
 
