@@ -1,0 +1,9 @@
+html, body {
+    background-color: rgb(6, 6, 6);
+    height: 100svh;
+    margin: 0;
+}
+
+#root { 
+    height: inherit;
+}
