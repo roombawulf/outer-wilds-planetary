@@ -1,20 +1,32 @@
-import { useRef } from 'react';
+import { Suspense, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useGLTF, OrthographicCamera, Environment, Loader } from '@react-three/drei'
+import { useSpring, animated, config} from '@react-spring/three';
 import * as THREE from 'three'
+
+useGLTF.preload("/timberhearth-low.glb");
+
 
 function Model(props) {
     const { nodes, materials } = useGLTF("/timberhearth-low.glb");
 
     const planet = useRef()
+    const [isHover, setHover] = useState(false)
 
     useFrame((state, delta) => {
         planet.current.rotation.y += delta * 0.2
         planet.current.rotation.x += delta * 0.2
+
+        planet.current.position.y = THREE.MathUtils.lerp( planet.current.position.y, 0, 0.02)
     })
 
+    const { scale } = useSpring({
+        scale: isHover ? 1.8 : 1.2,
+        config: config.gentle
+    });
+
     return (
-      <group {...props} dispose={null} scale={1.2} ref={planet} position={[0, 0, -1000]}>
+      <animated.group {...props} dispose={null} scale={scale} ref={planet} position={[0, -1000, -1000]} onClick={() => setHover(!isHover)}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <mesh
             castShadow
@@ -104,15 +116,16 @@ function Model(props) {
           material={materials.grass}
           rotation={[Math.PI / 2, 0, 0]}
         />
-      </group>
+      </animated.group>
     );
 }
-useGLTF.preload("/timberhearth-low.glb");
 
 function Scene() {
     return(
         <>
-            <Model />
+            <Suspense fallback={null}>
+                <Model />
+            </Suspense>
             <Environment files="satara_night_1k.hdr" />
         </>
     )
