@@ -1,0 +1,25 @@
+#curtain {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100svw;
+    height: 100svh;
+
+    background: var(--bg-color);
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.scene-change {
+    animation-name: scene-change;
+    animation-duration: 1.25s;
+}
+
+@keyframes scene-change {
+    0% {opacity: 0;}
+    30% {opacity: 1;}
+    /* Waiting time */
+    70% {opacity: 1;}
+    100% {opacity: 0;}
+}

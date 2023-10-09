@@ -1,0 +1,15 @@
+.signalscope-container {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+
+    bottom: 2rem;
+}
+
+.signalscope {
+    border-left: solid 2px var(--ui-blue);
+    border-right: solid 2px var(--ui-blue);
+}
+

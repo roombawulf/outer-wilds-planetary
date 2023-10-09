@@ -1,9 +1,41 @@
-html, body {
-    background-color: rgb(6, 6, 6);
-    height: 100svh;
-    margin: 0;
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
 }
 
-#root { 
-    height: inherit;
+:root {
+
+    /* Typography */
+    --ui-font: 'Jost Variable', sans-serif;
+
+    /* Colors */
+    --bg-color: rgb(5,5,5);
+
+    --ui-orange: #FD7D34;
+    --ui-white: #EDEDED;
+    --ui-blue: #7FD0D1;
+    --ui-green: #71CE58;
+
+}
+
+html {
+    overflow: hidden;
+}
+
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    background: var(--bg-color);
+}
+
+body {
+    font-family: 'Space Mono', sans-serif;
+    font-weight: 600;
+}
+
+.webgl-canvas { 
+    position: fixed !important;
 }

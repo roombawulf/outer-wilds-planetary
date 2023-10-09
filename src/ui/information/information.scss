@@ -1,0 +1,38 @@
+.info-container {
+    user-select: none;
+    -webkit-user-select: none;
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+    bottom: 3vw;
+    left: 3vw;
+}
+
+.planet-name {
+    user-select: none;
+    -webkit-user-select: none;
+
+    font-family: var(--ui-font);
+    font-weight: 600;
+    font-size: x-large;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: var(--ui-orange);
+}
+
+.planet-gravity {
+    user-select: none;
+    -webkit-user-select: none;
+
+    font-family: var(--ui-font);
+    font-weight: 600;
+    font-size: medium;
+    letter-spacing: 1px;
+
+    color: var(--ui-white);
+}
+

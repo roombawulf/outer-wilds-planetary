@@ -10,21 +10,32 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/jost": "^5.0.9",
+    "@fontsource/space-mono": "^5.0.12",
     "@react-spring/three": "^9.7.3",
-    "@react-three/drei": "^9.79.3",
-    "@react-three/fiber": "^8.13.5",
+    "@react-three/drei": "^9.83.9",
+    "@react-three/fiber": "^8.14.1",
+    "@react-three/postprocessing": "^2.15.1",
+    "gsap": "^3.12.2",
+    "howler": "^2.2.3",
+    "postprocessing": "^6.33.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "^0.154.0"
+    "three": "^0.154.0",
+    "zustand": "^4.4.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
+    "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react": "^7.32.2",
+    "@vitejs/plugin-react": "^4.0.4",
+    "eslint": "^8.49.0",
+    "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "vite": "^4.4.5"
+    "leva": "^0.9.35",
+    "r3f-perf": "^7.1.2",
+    "sass": "^1.66.1",
+    "vite": "^4.4.9",
+    "vite-plugin-glsl": "^1.1.2"
   }
 }

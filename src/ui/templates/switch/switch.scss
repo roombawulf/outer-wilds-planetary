@@ -1,0 +1,46 @@
+.switch {
+    display: flex;
+}
+  
+.switch-toggle {
+    display: none;
+
+    &:checked ~ .switch-left {
+        background: var(--ui-orange);
+    }
+    &:checked ~ .switch-right {
+        background: var(--ui-white);
+    }
+}
+
+.switch-icon {
+    width: 100%;
+    height: 100%;
+    fill: var(--ui-white);
+}
+
+.switch-left, .switch-right {
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.5s ease;
+}
+
+.switch-left {
+    width: 100%;
+    height: 75%;
+    background: var(--ui-white);
+    border-color: var(--ui-orange);
+    border-width: 2px;
+
+    border-style: solid none solid solid;
+}
+
+.switch-right {
+    width: 100%;
+    height: 75%;
+    background: var(--ui-orange);
+    border-color: var(--ui-orange);
+    border-width: 2px;
+
+    border-style: solid solid solid none;
+}
