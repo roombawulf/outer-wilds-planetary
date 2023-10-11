@@ -1,10 +1,8 @@
-import { useMemo, useEffect, useLayoutEffect, useRef } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useEffect } from "react";
+import { useThree } from "@react-three/fiber";
 import { Bounds, OrbitControls, useBounds } from "@react-three/drei";
 import { useNavigationStore } from "../States";
-import { gsap } from "gsap";
 
-import * as THREE from "three";
 import AshTwin from "../planets/AshTwin";
 import BrittleHollow from "../planets/BrittleHollow";
 import EmberTwin from "../planets/EmberTwin";

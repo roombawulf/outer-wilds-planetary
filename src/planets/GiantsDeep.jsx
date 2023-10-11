@@ -1,4 +1,20 @@
+import { extend, useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture } from "@react-three/drei";
+import { GiantsDeepSurfaceMaterial } from "../shaders/materials/giants-deep-surface/GiantsDeepSurfaceMaterial";
+import { useRef } from "react";
+
+extend({ GiantsDeepSurfaceMaterial })
+function Surface(){
+    const matRef = useRef(null)
+    useFrame((state, delta) => {
+        matRef.current.time = state.clock.elapsedTime
+    })
+
+    return (
+        <giantsDeepSurfaceMaterial key={GiantsDeepSurfaceMaterial.key} ref={matRef} />
+    )
+}
+
 
 function GiantsDeep(props) {
     const { nodes, materials } = useGLTF(
@@ -15,7 +31,7 @@ function GiantsDeep(props) {
                 material={nodes["giants-deep"].material}
                 rotation={[Math.PI / 2, 0, 0]}
             >
-                <meshLambertMaterial color={'#294a3c'} />
+                <Surface />
             </mesh>
             <mesh
                 geometry={nodes.OPC_Base_Proxy.geometry}
