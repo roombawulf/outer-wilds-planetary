@@ -27,8 +27,8 @@ class AtmosphereEffect extends Effect {
                 ["viewMatrixInverse", new Uniform(new Matrix4())],
 
                 // POSITION UNIFORMS
-                ["sunPosition", new Uniform(sunPosition)],
-                ["planetPosition", new Uniform(planetPosition)],
+                ["sunPosition", new Uniform(new Vector3().fromArray(sunPosition))],
+                ["planetPosition", new Uniform(new Vector3().fromArray(planetPosition))],
 
                 // RADIUS UNIFORMS
                 ["planetRadius", new Uniform(planetRadius)],
@@ -41,7 +41,7 @@ class AtmosphereEffect extends Effect {
                 ["scatteringStrength", new Uniform(scatteringStrength)],
 
                 // WAVELENGTH UNIFORM
-                ["wavelength", new Uniform(wavelength)],
+                ["wavelength", new Uniform(new Vector3().fromArray(wavelength))],
             ]),
         });
 
@@ -117,7 +117,7 @@ class AtmosphereEffect extends Effect {
         return this.uniforms.get("wavelength").value;
     }
     set wavelength(value) {
-        this.uniforms.get("wavelength").value.set(value.x, value.y, value.z);
+        this.uniforms.get("wavelength").value = value;
     }
 
     update(renderer, inputBuffer, deltaTime) {

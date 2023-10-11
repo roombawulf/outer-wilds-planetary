@@ -3,7 +3,7 @@ import { Howl, Howler } from "howler"
 const banjo = new Howl({
     src: ["sounds/banjo.ogg"],
     loop: true,
-    volume: 0.0
+    volume: 0.0,
 })
 const drums = new Howl({
     src: ["sounds/drums.ogg"],
@@ -27,14 +27,16 @@ const whistle = new Howl({
 })
 
 export const analyser = Howler.ctx.createAnalyser()
+Howler.masterGain.disconnect()
+Howler.masterGain.connect(analyser)
 analyser.fftSize = 2048
 analyser.connect(Howler.ctx.destination)
 
-banjo._sounds[0]._node.connect(analyser);
-drums._sounds[0]._node.connect(analyser);
-flute._sounds[0]._node.connect(analyser);
-harmonica._sounds[0]._node.connect(analyser);
-whistle._sounds[0]._node.connect(analyser);
+// banjo._sounds[0]._node.connect(analyser);
+// drums._sounds[0]._node.connect(analyser);
+// flute._sounds[0]._node.connect(analyser);
+// harmonica._sounds[0]._node.connect(analyser);
+// whistle._sounds[0]._node.connect(analyser);
 
 export const instruments = {
     hour: drums,
