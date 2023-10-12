@@ -9,6 +9,7 @@ function ReBound({ children }){
     const focus = useNavigationStore((state) => state.focus)
 
     useEffect(() => {
+        console.log(api)
         const planet = scene.getObjectByName(focus)
         api.refresh(planet).fit()
     },[focus, size])

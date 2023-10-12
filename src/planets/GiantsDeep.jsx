@@ -30,30 +30,31 @@ function GiantsDeep(props) {
                 geometry={nodes["giants-deep"].geometry}
                 material={nodes["giants-deep"].material}
                 rotation={[Math.PI / 2, 0, 0]}
+                scale={5}
             >
                 <Surface />
             </mesh>
             <mesh
                 geometry={nodes.OPC_Base_Proxy.geometry}
-                position={[0.849, 0, 0.849]}
+                position={[4.243, 0, 4.243]}
                 rotation={[Math.PI / 2, 0, -Math.PI / 4]}
-                scale={0.001}
+                scale={0.005}
             >
                 <meshLambertMaterial map={opc} />
             </mesh>
             <mesh
                 geometry={nodes.OPC_Cannon_Mid_Proxy.geometry}
-                position={[0.611, 0.001, 1.031]}
+                position={[3.055, 0.003, 5.154]}
                 rotation={[Math.PI / 2, 0, -0.542]}
-                scale={0.001}
+                scale={0.005}
             >
                 <meshLambertMaterial map={opc} />
             </mesh>
             <mesh
                 geometry={nodes.OPC_Cannon_Tip_Proxy.geometry}
-                position={[0.417, 0.001, 1.125]}
+                position={[2.086, 0.003, 5.623]}
                 rotation={[Math.PI / 2, 0, -0.363]}
-                scale={0.001}
+                scale={0.005}
             >
                 <meshLambertMaterial map={opc} />
             </mesh>

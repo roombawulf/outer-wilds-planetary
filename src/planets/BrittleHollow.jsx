@@ -76,63 +76,63 @@ function BrittleHollow(props) {
             <mesh
                 geometry={nodes["south-ice"].geometry}
                 rotation={[Math.PI / 2, 0, 0]}
-                scale={0.001}
+                scale={0.012}
             >
                 <meshLambertMaterial map={south} />
             </mesh>
             <mesh
                 geometry={nodes["north-ice"].geometry}
                 rotation={[Math.PI / 2, 0, 0]}
-                scale={0.001}
+                scale={0.012}
             >
                 <meshLambertMaterial map={north} />
             </mesh>
             <mesh
                 geometry={nodes.structures.geometry}
                 rotation={[1.911, -0.112, 1.66]}
-                scale={0.001}
+                scale={0.012}
             >
                 <meshLambertMaterial map={structures} />
             </mesh>
             <mesh
                 geometry={nodes["land-piece-1"].geometry}
                 rotation={[Math.PI / 2, 0, 0]}
-                scale={0.001}
+                scale={0.012}
             >
                 <meshLambertMaterial map={land1} />
             </mesh>
             <mesh
                 geometry={nodes["land-piece-2"].geometry}
                 rotation={[-2.324, 1.251, -0.977]}
-                scale={0.001}
+                scale={0.012}
             >
                 <meshLambertMaterial map={land2} />
             </mesh>
             <mesh
                 geometry={nodes["land-piece-3"].geometry}
                 rotation={[Math.PI / 2, 0, 0]}
-                scale={0.001}
+                scale={0.012}
             >
                 <meshLambertMaterial map={land3} />
             </mesh>
             <mesh
                 geometry={nodes["land-piece-5"].geometry}
                 rotation={[Math.PI / 2, 0, 0]}
-                scale={0.001}
+                scale={0.012}
             >
                 <meshLambertMaterial map={land5} />
             </mesh>
             <mesh
                 geometry={nodes["land-piece-4"].geometry}
                 rotation={[0.591, -0.038, -0.072]}
-                scale={0.001}
+                scale={0.012}
             >
                 <meshLambertMaterial map={land4} />
             </mesh>
             <mesh
                 geometry={nodes["land-piece-6"].geometry}
                 rotation={[-Math.PI, 0, -1.693]}
-                scale={0.001}
+                scale={0.012}
             >
                 <meshLambertMaterial map={land6} />
             </mesh>

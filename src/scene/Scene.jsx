@@ -1,30 +1,30 @@
-import { OrbitControls } from "@react-three/drei";
+import { Perf } from "r3f-perf";
 
 import Planets from "./Planets";
 import PlanetAtmosphere from "./PlanetAtmoshphere";
+
+import CamControls from "./CamControls";
 import CameraBounds from "./CameraBounds";
-import { Perf } from "r3f-perf";
 
 function Lights() {
     return (
         <>
-            <ambientLight intensity={0.1}/>
-            <pointLight position-x={-25} intensity={2}/>
+            <ambientLight intensity={0.5}/>
+            <pointLight position={[-50, 0, 50]} intensity={2}/>
         </>
     );
 }
 
 function Scene() {
+
     return (
         <>
-            <CameraBounds>
-                <Planets />
-            </CameraBounds>
-            
+            <Planets />
+
             <PlanetAtmosphere />
             <Lights />
 
-            <OrbitControls makeDefault />
+            <CamControls />
         </>
     );
 }

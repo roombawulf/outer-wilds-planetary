@@ -34,9 +34,9 @@ function AshTwin(props) {
         <group {...props} dispose={null} ref={groupRef}>
             <mesh
                 geometry={nodes["sand-column"].geometry}
-                position={[0.003, 0.001, -2.421]}
+                position={[0.006, 0.001, -4.842]}
                 rotation={[Math.PI / 2, 0, 0]}
-                scale={0.01}
+                scale={0.02}
             >
                 <sandColumnMaterial
                 transparent 
@@ -47,14 +47,16 @@ function AshTwin(props) {
             <group>
                 <mesh
                     geometry={nodes["ash-terrain"].geometry}
-                    position={[-0.161, -0.002, -5.081]}
+                    position={[-0.323, -0.003, -10.161]}
+                    scale={2}
                     ref={planetRef}
                 >
                     <meshLambertMaterial map={terrain} />
                 </mesh>
                 <mesh
                     geometry={nodes["ash-structures"].geometry}
-                    position={[-0.161, -0.002, -5.081]}
+                    position={[-0.323, -0.003, -10.161]}
+                    scale={2}
                     ref={structureRef}
                 >
                     <meshLambertMaterial map={structures} />

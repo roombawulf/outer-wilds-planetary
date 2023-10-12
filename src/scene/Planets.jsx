@@ -1,3 +1,4 @@
+import { useThree } from "@react-three/fiber";
 import { useNavigationStore } from "../States";
 
 import AshTwin from "../planets/AshTwin";
@@ -12,7 +13,7 @@ function Planets(){
     const focus = useNavigationStore((state) => state.focus)
 
     return(
-        <>
+        <group>
             {/* Sun */}
             <mesh visible={focus === "sun"} name="sun">
                 <sphereGeometry />
@@ -26,17 +27,17 @@ function Planets(){
             </group>
 
             {/* Timber Hearth */}
-            <TimberHearth visible={focus === "timber"} scale={5} name="timber" />
+            <TimberHearth visible={focus === "timber"} name="timber" />
 
             {/* Brittle Hollow */}
-            <BrittleHollow visible={focus === "brittle"} scale={5} name="brittle" />
+            <BrittleHollow visible={focus === "brittle"} name="brittle" />
 
             {/* Giants Deep */}
-            <GiantsDeep scale={2} visible={focus === "deep"} name="deep" />
+            <GiantsDeep visible={focus === "deep"} name="deep" />
 
             {/* Dark Bramble */}
             <DarkBramble visible={focus == "bramble"} name="bramble" />
-        </>
+        </group>
     )
 }
 

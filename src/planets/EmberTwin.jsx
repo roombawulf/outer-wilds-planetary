@@ -21,20 +21,21 @@ function EmberTwin(props) {
             <mesh
                 geometry={nodes["terrain-bottom"].geometry}
                 rotation={[Math.PI / 2, 0, 0]}
-                scale={0.01}
+                scale={0.02}
             >
                 <meshLambertMaterial map={terrainBottom} />
             </mesh>
             <mesh
                 geometry={nodes["terrain-top"].geometry}
                 rotation={[Math.PI / 2, 0, 0]}
-                scale={0.01}
+                scale={0.02}
             >
                 <meshLambertMaterial map={terrainTop} />
             </mesh>
             <mesh
                 geometry={nodes["ember-structures"].geometry}
-                position={[0, 0.002, 0.001]}
+                position={[0, 0.005, 0.001]}
+                scale={2}
             >
                 <meshLambertMaterial map={structures} />
             </mesh>

@@ -15,10 +15,10 @@ function TimberHearth(props) {
     structures.flipY = false;
     return (
         <group {...props} dispose={null}>
-            <mesh geometry={nodes["timber-surface"].geometry}>
+            <mesh scale={15} geometry={nodes["timber-surface"].geometry}>
                 <meshLambertMaterial map={terrain} />
             </mesh>
-            <mesh geometry={nodes["timber-structures"].geometry}>
+            <mesh scale={15} geometry={nodes["timber-structures"].geometry}>
                 <meshLambertMaterial map={structures} />
             </mesh>
         </group>
