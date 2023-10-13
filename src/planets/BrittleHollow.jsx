@@ -46,7 +46,7 @@ function BrittleHollow(props) {
 
     const groupRef = useRef(null);
 
-    useFrame((state, delta) => groupRef.current.rotation.y = state.clock.elapsedTime * 0.5)
+    useFrame((state, delta) => groupRef.current.rotation.y = state.clock.elapsedTime * 0.1)
 
     const land1 = useTexture("planets/brittle-hollow/textures/land1.webp");
     const land2 = useTexture("planets/brittle-hollow/textures/land2.webp");
