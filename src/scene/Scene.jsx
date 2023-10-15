@@ -2,6 +2,7 @@ import { Perf } from "r3f-perf";
 
 import Planets from "./Planets";
 import PlanetAtmosphere from "./PlanetAtmoshphere";
+import Stars from "./Stars";
 
 import CamControls from "./CamControls";
 import CameraBounds from "./CameraBounds";
@@ -23,6 +24,7 @@ function Scene() {
 
             <PlanetAtmosphere />
             <Lights />
+            <Stars count={5000} />
 
             <CamControls />
         </>
