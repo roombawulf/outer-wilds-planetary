@@ -64,7 +64,6 @@ vec3 generateSurface(vec3 x){
 
     color = color / max3(color);
 
-    // create output color, increase light > 0.5 (and add a bit to dark areas)
     color = (clamp((0.4 * pow(v,3.) + pow(v,2.) + 0.0*v), 0.0, 1.0) * 0.9 + 0.1) * color;
 
     return color;
@@ -73,7 +72,7 @@ vec3 generateSurface(vec3 x){
 
 vec3 lambertLighting( vec3 diffuse, vec3 normal ) {
     vec3 lightColor = vec3( 0.75, 0.0, 0.0 );
-    vec3 lightPos = vec3( -10.0, 5.0 * sin(time), 0.0 );
+    vec3 lightPos = vec3( -25.0, 25.0, 0.0 );
 
     vec3 lightDir = normalize( lightPos - v_position );
     vec3 color = dot( lightDir, normal ) * diffuse + ( diffuse * 0.5 );

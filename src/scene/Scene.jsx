@@ -11,7 +11,7 @@ function Lights() {
     return (
         <>
             <ambientLight intensity={0.5}/>
-            <pointLight position={[-50, 0, 50]} intensity={2}/>
+            <pointLight position={[-50, 0, 50]} intensity={2} color={'#ffe0a6'}/>
         </>
     );
 }
@@ -24,7 +24,7 @@ function Scene() {
 
             <PlanetAtmosphere />
             <Lights />
-            <Stars count={5000} />
+            <Stars count={1500} />
 
             <CamControls />
         </>
