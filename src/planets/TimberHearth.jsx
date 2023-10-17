@@ -30,6 +30,9 @@ function TimberHearth(props) {
             <Label position={[0.1,0.1,4.5]} scale={0.2}>
                 The Village
             </Label>
+            <Label position={[-5.0,0.0,0.0]} scale={0.2}>
+                Geyser Mountains
+            </Label>
             <mesh scale={15} geometry={nodes["timber-surface"].geometry}>
                 <meshLambertMaterial map={terrain} />
             </mesh>
