@@ -3,6 +3,7 @@ import { useGLTF, useTexture } from "@react-three/drei";
 import { extend, useFrame } from "@react-three/fiber";
 import { SandColumnMaterial } from "../shaders/materials/sand-column/SandColumnMaterial";
 import { DoubleSide, BackSide } from "three";
+import Label from "../ui/label/Label";
 
 extend({ SandColumnMaterial })
 
@@ -25,9 +26,9 @@ function AshTwin(props) {
 
     useFrame((state, delta) => {
         sandMat.current.time = state.clock.elapsedTime
-        structureRef.current.rotation.y = 0.2 * state.clock.elapsedTime
-        planetRef.current.rotation.y = 0.2 * state.clock.elapsedTime
-        groupRef.current.rotation.y = 0.1 * state.clock.elapsedTime
+        structureRef.current.rotation.y = 0.1 * state.clock.elapsedTime
+        planetRef.current.rotation.y = 0.1 * state.clock.elapsedTime
+        groupRef.current.rotation.y = 0.05 * state.clock.elapsedTime
     })
 
     return (

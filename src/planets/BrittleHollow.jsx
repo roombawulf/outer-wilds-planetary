@@ -3,6 +3,7 @@ import { useFBO, useGLTF, useTexture } from "@react-three/drei";
 import { BlackHoleMaterial } from "../shaders/materials/black-hole/BlackHoleMaterial";
 import { extend, useFrame, useThree } from "@react-three/fiber";
 import { useEffect } from "react";
+import Label from "../ui/label/Label";
 
 extend({ BlackHoleMaterial });
 
@@ -46,7 +47,7 @@ function BrittleHollow(props) {
 
     const groupRef = useRef(null);
 
-    useFrame((state, delta) => groupRef.current.rotation.y = state.clock.elapsedTime * 0.1)
+    // useFrame((state, delta) => groupRef.current.rotation.y = state.clock.elapsedTime * 0.1)
 
     const land1 = useTexture("planets/brittle-hollow/textures/land1.webp");
     const land2 = useTexture("planets/brittle-hollow/textures/land2.webp");
@@ -73,6 +74,26 @@ function BrittleHollow(props) {
 
     return (
         <group {...props} dispose={null} ref={groupRef}>
+
+            <Label position={[1.0,1.5,0]} scale={0.1}>
+                Hanging City
+            </Label>
+            <Label position={[0,-4.5,0]} scale={0.1}>
+                Southern Observatory
+            </Label>
+            <Label position={[0,4.2,0]} scale={0.1}>
+                Northern Glacier
+            </Label>
+            <Label position={[4.2,0,0]} scale={0.1}>
+                Gravity Cannon
+            </Label>
+            <Label position={[0,1.0,-4.5]} scale={0.1}>
+                Escape Pod 1
+            </Label>
+            <Label position={[-1.0,-1.0,0]} scale={0.1} maxWidth={15}>
+                Tower of Quantum Knowledge
+            </Label>
+
             <mesh
                 geometry={nodes["south-ice"].geometry}
                 rotation={[Math.PI / 2, 0, 0]}

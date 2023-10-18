@@ -2,6 +2,7 @@ import { extend, useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { GiantsDeepSurfaceMaterial } from "../shaders/materials/giants-deep-surface/GiantsDeepSurfaceMaterial";
 import { useRef } from "react";
+import Label from "../ui/label/Label";
 
 extend({ GiantsDeepSurfaceMaterial })
 function Surface(){
@@ -26,6 +27,9 @@ function GiantsDeep(props) {
 
     return (
         <group {...props} dispose={null}>
+            <Label position={[4.0,0.5,5.0]} scale={0.1}>
+                Orbital Probe Cannon
+            </Label>
             <mesh
                 geometry={nodes["giants-deep"].geometry}
                 material={nodes["giants-deep"].material}
