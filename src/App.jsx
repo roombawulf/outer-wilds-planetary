@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 
 import '@fontsource-variable/jost';
@@ -13,7 +14,11 @@ function App() {
     return (
         <>
             <Canvas className="webgl-canvas" dpr={1.0} camera={{fov: 25}}>
+                <Suspense>
+
                 <Scene />
+
+                </Suspense>
             </Canvas>
 
             <LoadingScreen />

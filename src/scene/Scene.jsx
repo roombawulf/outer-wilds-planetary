@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Perf } from "r3f-perf";
 
 import Planets from "./Planets";
@@ -20,8 +21,8 @@ function Scene() {
 
     return (
         <>
-            <Planets />
 
+            <Planets />
             <PlanetAtmosphere />
             <Lights />
             <Stars count={1500} />

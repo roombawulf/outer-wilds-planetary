@@ -1,8 +1,11 @@
 import { useProgress } from "@react-three/drei";
 
-function LoadingScreen(){
+export default function LoadingScreen(){
     const { progress } = useProgress()
 
-    return <h1 style={{ position: 'relative', color: 'aliceblue' }}> {progress} </h1>
+    return (
+        <div style={{ position: 'relative', color: 'aliceblue' }}>
+            {progress}
+        </div>
+    )
 }
-export default LoadingScreen
