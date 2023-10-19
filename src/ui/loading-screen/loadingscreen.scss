@@ -1,0 +1,22 @@
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    width: 100svw;
+    height: 100svh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+
+    background: var(--bg-color);
+    pointer-events: none;
+    user-select: none;
+}
+
+.loading-value {
+    color: mediumseagreen;
+}
