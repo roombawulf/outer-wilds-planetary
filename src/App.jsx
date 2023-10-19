@@ -1,10 +1,11 @@
 import { Canvas } from "@react-three/fiber";
-import { Loader, OrbitControls } from "@react-three/drei";
 
 import '@fontsource-variable/jost';
 import '@fontsource/space-mono';
+
 import Scene from "./scene/Scene";
 import UI from "./ui/UI"
+import LoadingScreen from "./ui/loading-screen/LoadingScreen";
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
                 <Scene />
             </Canvas>
 
-            <Loader />
+            <LoadingScreen />
             <UI />
         </>
     );
