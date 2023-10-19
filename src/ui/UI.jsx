@@ -14,7 +14,9 @@ function UI() {
         <>
             <Curtain />
 
-            <Navigation/>
+            <div className="navigation-container">
+                <Navigation/>
+            </div>
 
             <Information />
 

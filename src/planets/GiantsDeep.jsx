@@ -27,7 +27,7 @@ function GiantsDeep(props) {
 
     return (
         <group {...props} dispose={null}>
-            <Label position={[4.0,0.5,5.0]} scale={0.1}>
+            <Label position={[4.0,0.5,5.0]} fontSize={0.1}>
                 Orbital Probe Cannon
             </Label>
             <mesh

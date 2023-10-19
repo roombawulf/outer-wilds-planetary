@@ -24,9 +24,7 @@ export function ViewSwitch() {
 }
 
 export function Curtain() {
-
     const curtain = useRef()
-
     return(
         <div id="curtain" ref={curtain} />
     )

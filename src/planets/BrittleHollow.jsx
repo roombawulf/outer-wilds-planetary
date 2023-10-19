@@ -75,22 +75,22 @@ function BrittleHollow(props) {
     return (
         <group {...props} dispose={null} ref={groupRef}>
 
-            <Label position={[1.0,1.5,0]} scale={0.1}>
+            <Label position={[1.0,1.5,0]} fontSize={0.1}>
                 Hanging City
             </Label>
-            <Label position={[0,-4.5,0]} scale={0.1}>
+            <Label position={[0,-4.5,0]} fontSize={0.1}>
                 Southern Observatory
             </Label>
-            <Label position={[0,4.2,0]} scale={0.1}>
+            <Label position={[0,4.2,0]} fontSize={0.1}>
                 Northern Glacier
             </Label>
-            <Label position={[4.2,0,0]} scale={0.1}>
+            <Label position={[4.2,0,0]} fontSize={0.1}>
                 Gravity Cannon
             </Label>
-            <Label position={[0,1.0,-4.5]} scale={0.1}>
+            <Label position={[0,1.0,-4.5]} fontSize={0.1}>
                 Escape Pod 1
             </Label>
-            <Label position={[-1.0,-1.0,0]} scale={0.1} maxWidth={15}>
+            <Label position={[-1.0,-1.0,0]} fontSize={0.1} maxWidth={15}>
                 Tower of Quantum Knowledge
             </Label>
 

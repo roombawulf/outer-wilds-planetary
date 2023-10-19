@@ -24,22 +24,22 @@ function TimberHearth(props) {
     return (
 
         <group ref={planet} {...props} dispose={null}>
-            <Label position={[-2,4,0]} scale={0.15}>
+            <Label position={[-2,4,0]} fontSize={0.15}>
                 Youngbark Crater
             </Label>
-            <Label position={[0.1,0.1,4.5]} scale={0.15}>
+            <Label position={[0.1,0.1,4.5]} fontSize={0.15}>
                 The Village
             </Label>
-            <Label position={[-5.0,0.0,0.0]} scale={0.15}>
+            <Label position={[-5.0,0.0,0.0]} fontSize={0.15}>
                 Geyser Mountains
             </Label>
-            <Label position={[3.0,3.5,1.0]} scale={0.15}>
+            <Label position={[3.0,3.5,1.0]} fontSize={0.15}>
                 Radio Tower
             </Label>
-            <Label position={[0,-4.2,0]} scale={0.15}>
+            <Label position={[0,-4.2,0]} fontSize={0.15}>
                 Quantum Grove
             </Label>
-            <Label position={[3.5,0,-4.0]} scale={0.15}>
+            <Label position={[3.5,0,-4.0]} fontSize={0.15}>
                 Nomai Mines
             </Label>
             <mesh scale={15} geometry={nodes["timber-surface"].geometry}>
