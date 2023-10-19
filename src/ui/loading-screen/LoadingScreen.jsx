@@ -4,17 +4,20 @@ import "./loadingscreen.scss"
 
 
 export default function LoadingScreen(){
-    const { active, loaded, total } = useProgress()
+    const { progress, active, loaded, total } = useProgress()
     const [hide, setHide] = useState(false)
     const buttonRef = useRef(null)
     const containerRef = useRef(null)
 
     useEffect(() => {
-        setTimeout( () => {
-            buttonRef.current.style.opacity = 1
-            buttonRef.current.style.pointerEvents = 'auto'
-        }, 1000)
-    }, [active])
+        console.log(active)
+        if (!active && progress === 100) {
+            setTimeout(() => {
+                buttonRef.current.style.opacity = 1
+                buttonRef.current.style.pointerEvents = 'auto'
+            }, 1000)
+        }
+    }, [active, loaded, total])
 
     useEffect(() => {
         buttonRef.current.style.pointerEvents = 'none'
