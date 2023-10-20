@@ -16,14 +16,13 @@ function CamControls() {
 
     useEffect(() => {
 
-        console.log(focus)
         bBox.setFromObject(scene.getObjectByName(focus))
         bBox.getSize(bSize)
 
         const maxDim = Math.max(bSize.x, bSize.y, bSize.z)
         const fov = camera.fov * (Math.PI / 180)
         let cameraZ = Math.abs(maxDim / 4 * Math.tan(fov * 2))
-        cameraZ *= size.width < 600 ? 20.0 : 10.0
+        cameraZ *= size.width < 600 ? 8.0 : 10.0
 
         camera.position.z = cameraZ
 
@@ -35,7 +34,7 @@ function CamControls() {
 
     }, [focus])
 
-    return <OrbitControls makeDefault ref={controlsRef} />
+    return <OrbitControls makeDefault ref={controlsRef} enablePan={false} />
 
 }
 

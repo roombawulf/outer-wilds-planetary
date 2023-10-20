@@ -13,11 +13,9 @@ function App() {
 
     return (
         <>
-            <Canvas className="webgl-canvas" dpr={1.0} camera={{fov: 25}}>
+            <Canvas className="webgl-canvas" camera={{fov: 25}}>
                 <Suspense>
-
-                <Scene />
-
+                    <Scene />
                 </Suspense>
             </Canvas>
 
