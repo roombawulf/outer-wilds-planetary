@@ -15,7 +15,6 @@ function App() {
         <>
             <Canvas className="webgl-canvas" camera={{fov: 25}}>
                 <Scene />
-
             </Canvas>
 
             <LoadingScreen />

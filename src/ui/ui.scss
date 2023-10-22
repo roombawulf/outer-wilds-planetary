@@ -38,8 +38,22 @@
     z-index: 10;
 }
 
-.navigation-container {
-    padding-top: 1.5rem;
-    display: flex;
-    justify-content: center;
+.navbar-desktop {
+    position: relative;
+    width: fit-content;
+    height: 100%;
+    padding: 0.5rem;
+
+    border-right: solid 1px var(--ui-orange);
+    // background: var(--ui-orange);
+}
+
+.icon-container {
+    width: 50px;
+    height: auto;
+}
+
+.planet-icon {
+    max-width: 100%;
+    max-height: 100%;
 }
