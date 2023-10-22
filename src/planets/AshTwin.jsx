@@ -68,3 +68,5 @@ function AshTwin(props) {
 }
 export default AshTwin;
 useGLTF.preload("planets/hourglass-twins/models/ash-twin.glb");
+useTexture.preload("planets/hourglass-twins/textures/ash-terrain.webp")
+useTexture.preload("planets/hourglass-twins/textures/ash-structures.webp")

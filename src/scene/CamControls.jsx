@@ -14,25 +14,25 @@ function CamControls() {
     const focus = useNavigationStore((state) => state.focus)
 
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        bBox.setFromObject(scene.getObjectByName(focus))
-        bBox.getSize(bSize)
+    //     bBox.setFromObject(scene.getObjectByName(focus))
+    //     bBox.getSize(bSize)
 
-        const maxDim = Math.max(bSize.x, bSize.y, bSize.z)
-        const fov = camera.fov * (Math.PI / 180)
-        let cameraZ = Math.abs(maxDim / 4 * Math.tan(fov * 2))
-        cameraZ *= size.width < 600 ? 8.0 : 10.0
+    //     const maxDim = Math.max(bSize.x, bSize.y, bSize.z)
+    //     const fov = camera.fov * (Math.PI / 180)
+    //     let cameraZ = Math.abs(maxDim / 4 * Math.tan(fov * 2))
+    //     cameraZ *= size.width < 600 ? 8.0 : 10.0
 
-        camera.position.z = cameraZ
+    //     camera.position.z = cameraZ
 
-        const minZ = bBox.min.z
-        const cameraToFarEdge = (minZ < 0) ? -minZ + cameraZ : cameraZ - minZ
-        camera.updateProjectionMatrix()
+    //     const minZ = bBox.min.z
+    //     const cameraToFarEdge = (minZ < 0) ? -minZ + cameraZ : cameraZ - minZ
+    //     camera.updateProjectionMatrix()
 
-        controlsRef.current.maxDistance = cameraToFarEdge * 2
+    //     controlsRef.current.maxDistance = cameraToFarEdge * 2
 
-    }, [focus])
+    // }, [focus])
 
     return <OrbitControls makeDefault ref={controlsRef} enablePan={false} />
 

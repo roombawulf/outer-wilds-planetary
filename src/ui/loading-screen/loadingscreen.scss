@@ -60,7 +60,7 @@
     color: var(--ui-green);
 }
 
-.button {
+#start {
     cursor: pointer;
     pointer-events: none;
     padding: 0.5rem 2rem;
@@ -74,12 +74,23 @@
     color: var(--ui-white);
 
     border: solid 0.2rem var(--ui-orange);
-    transition: all 0.25s ease-in-out;
 
     opacity: 0;
+
+    transition: background 0.5s, color 0.5s;
 
     &:hover {
         background: var(--ui-white);
         color: var(--bg-color);
     }
+}
+
+.fade-in {
+    animation-name: fade-in;
+    animation-duration: 1.0s;
+}
+
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }

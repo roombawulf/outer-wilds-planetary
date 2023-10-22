@@ -45,3 +45,7 @@ function DarkBramble(props) {
 }
 export default DarkBramble
 useGLTF.preload("planets/dark-bramble/models/dark-bramble.glb");
+useTexture.preload("planets/dark-bramble/textures/seed.webp")
+useTexture.preload("planets/dark-bramble/textures/ice.webp")
+useTexture.preload("planets/dark-bramble/textures/vines.webp")
+useTexture.preload("planets/dark-bramble/textures/vines2.webp")

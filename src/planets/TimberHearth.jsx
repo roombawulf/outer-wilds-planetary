@@ -54,3 +54,5 @@ function TimberHearth(props) {
 }
 export default TimberHearth;
 useGLTF.preload("planets/timber-hearth/models/timber-hearth.glb");
+useTexture.preload("planets/timber-hearth/textures/timber-surface.webp")
+useTexture.preload("planets/timber-hearth/textures/timber-structures.webp")

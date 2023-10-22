@@ -22,7 +22,10 @@ function Scene() {
     return (
         <>
 
-            <Planets />
+            <Suspense>
+                <Planets />
+            </Suspense>
+
             <PlanetAtmosphere />
             <Lights />
             <Stars count={1500} />

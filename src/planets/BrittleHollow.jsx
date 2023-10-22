@@ -164,3 +164,12 @@ function BrittleHollow(props) {
 }
 export default BrittleHollow;
 useGLTF.preload("planets/brittle-hollow/models/brittle-hollow.glb");
+useTexture.preload("planets/brittle-hollow/textures/land1.webp");
+useTexture.preload("planets/brittle-hollow/textures/land2.webp");
+useTexture.preload("planets/brittle-hollow/textures/land3.webp");
+useTexture.preload("planets/brittle-hollow/textures/land4.webp");
+useTexture.preload("planets/brittle-hollow/textures/land5.webp");
+useTexture.preload("planets/brittle-hollow/textures/land6.webp");
+useTexture.preload("planets/brittle-hollow/textures/north.webp");
+useTexture.preload("planets/brittle-hollow/textures/south.webp");
+useTexture.preload("planets/brittle-hollow/textures/structures.webp");

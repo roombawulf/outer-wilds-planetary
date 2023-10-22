@@ -62,3 +62,6 @@ function EmberTwin(props) {
 }
 export default EmberTwin;
 useGLTF.preload("planets/hourglass-twins/models/ember-twin.glb");
+useTexture.preload("planets/hourglass-twins/textures/ember-terrain-top.webp");
+useTexture.preload("planets/hourglass-twins/textures/ember-terrain-bottom.webp");
+useTexture.preload("planets/hourglass-twins/textures/ember-structures.webp");

@@ -67,3 +67,4 @@ function GiantsDeep(props) {
 }
 export default GiantsDeep;
 useGLTF.preload("planets/giants-deep/models/giants-deep.glb");
+useTexture.preload("planets/giants-deep/textures/opc.webp");
