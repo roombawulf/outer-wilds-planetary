@@ -23,6 +23,9 @@ dependencies:
   '@react-three/postprocessing':
     specifier: ^2.15.1
     version: 2.15.1(@react-three/fiber@8.14.5)(@types/three@0.157.0)(react@18.2.0)(three@0.154.0)
+  '@tabler/icons-react':
+    specifier: ^2.39.0
+    version: 2.39.0(react@18.2.0)
   gsap:
     specifier: ^3.12.2
     version: 3.12.2
@@ -1243,6 +1246,20 @@ packages:
     dependencies:
       react: 18.2.0
     dev: true
+
+  /@tabler/icons-react@2.39.0(react@18.2.0):
+    resolution: {integrity: sha512-MyUK1jqtmHPZBnDXqIc1Y5OnfoqG+tGaSB1/gcl0mlY462fJ5f3QB0ZIZzAHMAGYb6K2iJSdFIFavhcgpDDZ7Q==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@tabler/icons': 2.39.0
+      prop-types: 15.8.1
+      react: 18.2.0
+    dev: false
+
+  /@tabler/icons@2.39.0:
+    resolution: {integrity: sha512-iK3j2jIEGIUaJcbYYg5iwyG1Y/m4lzUxAUbxRpvgeXCWP29jvZaH5hajZmU3KaSealddHuJg7PSQislPHpCsoQ==}
+    dev: false
 
   /@types/babel__core@7.20.2:
     resolution: {integrity: sha512-pNpr1T1xLUc2l3xJKuPtsEky3ybxN3m4fJkknfIpTCTfIZCDW57oAg+EfCgIIp2rvCe0Wn++/FfodDS4YXxBwA==}

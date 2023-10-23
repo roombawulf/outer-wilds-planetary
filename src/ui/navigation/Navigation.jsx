@@ -6,7 +6,6 @@ function Navigation(){
     const setFocus = useNavigationStore((state) => state.setFocus)
 
     return(
-        <div className="navbar-desktop">
         <ul className="planet-list">
             <li onClick={() => setFocus("sun")}>
                 <img className="planet-icon" src="ui/UI_Sun.png" />
@@ -42,7 +41,6 @@ function Navigation(){
                 <div> Dark Bramble </div>
             </li>
         </ul>
-        </div>
     )
 }
 export default Navigation

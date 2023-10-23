@@ -14,7 +14,7 @@ export const useNavigationStore = create((set) => ({
 
 export const useSoundStore = create((set) => ({
     isPlay: false,
-    isMute: true,
+    isMute: false,
     isHarmony: false,
     toggle: { hour: false, timber: false, brittle: false, deep: false, bramble: false },
 

@@ -1,0 +1,35 @@
+.check {
+    border-style: solid;
+    border-color: var(--ui-orange);
+    border-width: 2px;
+
+    padding: 0.25rem;
+
+    cursor: pointer;
+}
+
+.input {
+    display: none;
+
+    &:checked ~ .toggle-box::after {
+        background-color: var(--ui-white);
+    }
+}
+
+.box {
+
+    width: 1rem;
+    height: 1rem;
+
+    &::after {
+        content: "";
+        display: block;
+        background-color: transparent;
+
+        width: inherit;
+        height: inherit;
+
+        transition: all ease 0.5s;
+ 
+    }
+}

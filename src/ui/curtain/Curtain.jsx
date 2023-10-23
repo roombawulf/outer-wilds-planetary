@@ -2,7 +2,6 @@ import { useRef } from "react"
 import { useNavigationStore } from "../../States"
 import Switch from "../templates/switch/Switch"
 import "./curtain.scss"
-import { useEffect } from "react"
 
 export function ViewSwitch() {
     const toggleAnalyse = useNavigationStore((state) => state.toggleAnalyse)

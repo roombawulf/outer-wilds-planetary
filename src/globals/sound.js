@@ -32,12 +32,6 @@ Howler.masterGain.connect(analyser)
 analyser.fftSize = 2048
 analyser.connect(Howler.ctx.destination)
 
-// banjo._sounds[0]._node.connect(analyser);
-// drums._sounds[0]._node.connect(analyser);
-// flute._sounds[0]._node.connect(analyser);
-// harmonica._sounds[0]._node.connect(analyser);
-// whistle._sounds[0]._node.connect(analyser);
-
 export const instruments = {
     hour: drums,
     timber: banjo,

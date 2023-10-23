@@ -1,16 +1,20 @@
 import { useState, useEffect, useRef } from "react";
 import { useProgress } from "@react-three/drei";
 import "./loadingscreen.scss"
+import { useSoundStore } from "../../States";
 
 
 export default function LoadingScreen(){
     const { progress, active } = useProgress()
     const [hide, setHide] = useState(false)
+    const setPlaying = useSoundStore((state) => state.setPlaying)
     const buttonRef = useRef(null)
     const containerRef = useRef(null)
 
-
-    useEffect(() => console.log( active))
+    const clickHandler = () => {
+        setPlaying()
+        setHide(true)
+    }
 
     useEffect(() => {
         if (!active) {
@@ -25,7 +29,7 @@ export default function LoadingScreen(){
 
     useEffect(() => {
         buttonRef.current.style.pointerEvents = 'none'
-    }, [hide]) 
+    }, [hide])
 
     return (
 
@@ -37,7 +41,7 @@ export default function LoadingScreen(){
             <button 
             id="start"
             disabled={active} 
-            onClick={() => setHide(true)}
+            onClick={clickHandler}
             ref={buttonRef}
             > 
                 EXPLORE 

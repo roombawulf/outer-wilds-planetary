@@ -9,11 +9,20 @@ import { Curtain, ViewSwitch } from "./curtain/Curtain";
 import "./ui.scss"
 import { useState } from "react";
 import { useEffect } from "react";
+import Toggle from "./toggle/Toggle";
+
+import { IconHeadphones, IconHeadphonesOff } from "@tabler/icons-react"
 
 
 function DesktopUI() {
     return (
-        <Navigation />
+        <div className="navbar">
+            <Navigation />
+            <Toggle>
+                <IconHeadphones size={'100%'} color="var(--ui-orange)"/>
+                <IconHeadphonesOff size={'100%'} color="var(--ui-orange)" />
+            </Toggle>
+        </div>
     )
 }
 
