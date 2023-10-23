@@ -1,6 +1,5 @@
 import Information from "./information/Information";
 import Navigation from "./navigation/Navigation";
-
 import SignalScope from "./audio-visualiser/signalscope/SignalScope";
 import HarmonySwitch from "./audio-visualiser/switches/HarmonySwitch";
 import MuteSwitch from "./audio-visualiser/switches/MuteSwitch";
@@ -14,16 +13,7 @@ import { useEffect } from "react";
 
 function DesktopUI() {
     return (
-        <div className="navbar-desktop">
-            <div className="icon-container">
-                <img src="../ui/UI_Sun.png" alt="djdjd" className="planet-icon"/>
-            </div>
-            <div className="icon-container">
-                <img src="../ui/UI_Sun.png" alt="djdjd" className="planet-icon"/>
-            </div><div className="icon-container">
-                <img src="../ui/UI_Sun.png" alt="djdjd" className="planet-icon"/>
-            </div>
-        </div>
+        <Navigation />
     )
 }
 
@@ -46,9 +36,7 @@ function UI() {
 
             <Information />
 
-            <div className="signalscope-container">
-                <SignalScope />
-            </div>
+            <SignalScope />
 
 
             {/* <div className="switches-container">

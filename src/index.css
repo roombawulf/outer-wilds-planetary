@@ -16,6 +16,7 @@
     --ui-white: #EDEDED;
     --ui-blue: #7FD0D1;
     --ui-green: #71CE58;
+    --ui-black: #1f1e1e;
 
 }
 
@@ -37,6 +38,12 @@ body {
     font-weight: 600;
 }
 
+.app-container {
+    display: flex;
+    height: 100%;
+
+}
+
 .webgl-canvas { 
-    position: fixed !important;
+    flex-grow: 1;
 }

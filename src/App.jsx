@@ -13,12 +13,16 @@ function App() {
 
     return (
         <>
-            <Canvas className="webgl-canvas" camera={{fov: 25}}>
-                <Scene />
-            </Canvas>
+            <div className="app-container">
+                <UI />
 
-            <LoadingScreen />
-            <UI />
+                <Canvas className="webgl-canvas" camera={{fov: 25}}>
+                    <Scene />
+                </Canvas>
+
+                <LoadingScreen />
+            </div>
+
         </>
     );
 }

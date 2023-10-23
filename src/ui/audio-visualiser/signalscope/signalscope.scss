@@ -9,6 +9,13 @@
 }
 
 .signalscope {
+
+    position: absolute;
+    height: fit-content;
+    bottom: 1.5rem;
+    right: 1rem;
+    z-index: 10;
+
     border-left: solid 2px var(--ui-blue);
     border-right: solid 2px var(--ui-blue);
 }
