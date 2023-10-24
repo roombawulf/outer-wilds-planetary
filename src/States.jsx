@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 export const useNavigationStore = create((set) => ({
-    focus: 'sun',
+    focus: 'timber',
     analyse: true,
     active: false,
 
@@ -19,7 +19,7 @@ export const useSoundStore = create((set) => ({
     toggle: { hour: false, timber: false, brittle: false, deep: false, bramble: false },
 
     setPlaying: () => set({ isPlay: true }),
-    setMute: (bool) => set({ isMute: bool }),
+    toggleMute: () => set((state) => ({ isMute: !state.isMute })),
     toggleHarmony: () => set((state) => ({ isHarmony: !state.isHarmony  }) ),
     toggleInstrument: (planet) => set((state) => ({ ...state, toggle: {...state.toggle, [planet]: !state.toggle[planet]}  }) ),
     

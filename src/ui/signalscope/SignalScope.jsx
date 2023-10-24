@@ -1,63 +1,15 @@
 import { useRef, useEffect, useMemo } from "react";
-import { useNavigationStore, useSoundStore } from "../../../States";
-import { instruments, analyser } from "../../../globals/sound";
+import { useNavigationStore, useSoundStore } from "../../States";
+import { instruments, analyser } from "../../globals/sound";
 import "./signalscope.scss";
+import useAudio from "../audio-controls/useAudio";
 
 function SignalScope() {
+
     const canvasRef = useRef(null);
-    const focus = useNavigationStore((state) => state.focus); // global focus state
-
-    const isMute = useSoundStore((state) => state.isMute);
-    const isHarmony = useSoundStore((state) => state.isHarmony);
-    const toggle = useSoundStore((state) => state.toggle);
-
     const bufferLen = analyser.frequencyBinCount;
     const dataArray = useMemo(() => new Uint8Array(bufferLen), []);
-
-    // orchestrate sounds method
-    const orchestrate = () => {
-        for (const planet in instruments) {
-            if (toggle[planet]) {
-                instruments[planet].fade(
-                    instruments[planet].volume(),
-                    0.15,
-                    1000
-                );
-            } else {
-                instruments[planet].fade(
-                    instruments[planet].volume(),
-                    0.0,
-                    1000
-                );
-            }
-        }
-    };
-
-    // focus sounds method
-    const focusSound = () => {
-        for (const planet in instruments) {
-            if (planet === focus) {
-                instruments[planet].fade(
-                    instruments[planet].volume(),
-                    0.15,
-                    1000
-                );
-            } else {
-                instruments[planet].fade(
-                    instruments[planet].volume(),
-                    0.0,
-                    1000
-                );
-            }
-        }
-    };
-
-    // useEffect to react to state changes in sound states
-    useEffect(() => {
-        if (!isMute) {
-            isHarmony ? orchestrate() : focusSound();
-        }
-    }, [focus, toggle, isMute, isHarmony]);
+    useAudio()
 
     // draw method for canvas
     const draw = (ctx) => {

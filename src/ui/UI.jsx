@@ -1,27 +1,20 @@
 import Information from "./information/Information";
 import Navigation from "./navigation/Navigation";
-import SignalScope from "./audio-visualiser/signalscope/SignalScope";
-import HarmonySwitch from "./audio-visualiser/switches/HarmonySwitch";
-import MuteSwitch from "./audio-visualiser/switches/MuteSwitch";
-import HarmonyToggler from "./audio-visualiser/toggles/HarmonyToggler";
-import { Curtain, ViewSwitch } from "./curtain/Curtain";
+import SignalScope from "./signalscope/SignalScope";
+import { Curtain } from "./curtain/Curtain";
 
 import "./ui.scss"
 import { useState } from "react";
 import { useEffect } from "react";
 import Toggle from "./toggle/Toggle";
-
-import { IconHeadphones, IconHeadphonesOff } from "@tabler/icons-react"
-
+import Mute from "./audio-controls/mute/Mute";
 
 function DesktopUI() {
     return (
         <div className="navbar">
             <Navigation />
-            <Toggle>
-                <IconHeadphones size={'100%'} color="var(--ui-orange)"/>
-                <IconHeadphonesOff size={'100%'} color="var(--ui-orange)" />
-            </Toggle>
+            <div style={{ flex: 1 }} />
+            <Mute />
         </div>
     )
 }

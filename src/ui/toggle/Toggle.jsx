@@ -4,7 +4,7 @@ import "./toggle.scss"
 function Toggle({children, handler}){
     const [toggle, setToggle] = useState(false)
     const onClick = () => {
-        handler
+        handler()
         setToggle(!toggle)
     }
     
