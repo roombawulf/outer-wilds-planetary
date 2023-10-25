@@ -42,9 +42,22 @@
 .navbar {
     position: relative;
     width: min-content;
-    height: 100%;
+    // height: 100%;
     padding: 0.5rem;
     background: var(--ui-black);
     display: flex;
     flex-direction: column; /* Adjust as needed */
+}
+
+.nav-mobile {
+    margin: 1rem 0;
+    width: 95%;
+    z-index: 10;
+    border-radius: 1rem;
+    overflow: scroll;
+}
+
+.menu-button {
+    background: transparent;
+    border: none;
 }

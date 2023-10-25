@@ -1,12 +1,13 @@
+import { forwardRef } from "react"
 import { useNavigationStore } from "../../States"
 import "./navigation.scss"
 
-function Navigation(){
+const Navigation = forwardRef(function Navigation({ mobileMode }, ref){
 
     const setFocus = useNavigationStore((state) => state.setFocus)
 
     return(
-        <ul className="planet-list">
+        <ul className={`planet-list ${mobileMode ? `mobile-list` : `desktop-list`}`} ref={ref}>
             <li onClick={() => setFocus("sun")}>
                 <img className="planet-icon" src="ui/UI_Sun.png" />
                 <div> The Sun </div>
@@ -42,5 +43,5 @@ function Navigation(){
             </li>
         </ul>
     )
-}
+})
 export default Navigation

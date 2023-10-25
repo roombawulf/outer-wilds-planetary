@@ -11,15 +11,21 @@
         display: flex;
         align-items: center; /* Vertically align the content */
 
-        &:hover > div {
-            opacity: 1;
-        }
-
         .planet-icon {
             max-width: 50px; /* Set a specific width for the image */
             max-height: auto; /* Adjust height as needed */
         }
+    }
 
+    hr {
+        margin: 0;
+        width: 100%;
+    }
+    
+}
+
+.desktop-list {
+    li {
         div {
             position: absolute;
             left: 120%;
@@ -30,11 +36,20 @@
             opacity: 0;
             transition: opacity 0.1s ease-in-out;
         }
-    }
 
-    hr {
-        margin: 0;
-        width: 100%;
+        &:hover > div {
+            opacity: 1;
+        }
     }
-    
+}
+
+.mobile-list {
+    li {
+        gap: 2rem;
+        div {
+            z-index: 10;
+            width: max-content;
+            user-select: none;
+        }
+    }
 }

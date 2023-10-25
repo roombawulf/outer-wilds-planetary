@@ -41,9 +41,16 @@ body {
 .app-container {
     display: flex;
     height: 100%;
-
+    justify-content: center;
 }
 
-.webgl-canvas { 
+
+.desktop { 
     flex-grow: 1;
+}
+
+.mobile {
+    top: 0;
+    left: 0;
+    position: fixed !important;
 }
