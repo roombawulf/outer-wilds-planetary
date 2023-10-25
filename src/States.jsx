@@ -1,5 +1,10 @@
 import { create } from "zustand";
 
+export const useUIStore = create((set) => ({
+    isMobile: window.innerWidth < 768,
+    setMobile: (bool) => set({ isMobile: bool })
+}))
+
 export const useNavigationStore = create((set) => ({
     focus: 'timber',
     analyse: true,

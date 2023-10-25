@@ -7,13 +7,17 @@ import '@fontsource/space-mono';
 import Scene from "./scene/Scene";
 import UI from "./ui/UI"
 import LoadingScreen from "./ui/loading-screen/LoadingScreen";
+import { useUIStore } from "./States";
 
 
 function App() {
 
-    const [isMobile, setMobile] = useState(window.innerWidth < 768)
+    const isMobile = useUIStore((state) => state.isMobile)
+    const setMobile = useUIStore((state) => state.setMobile)
+
+    // const [isMobile, setMobile] = useState(window.innerWidth < 768)
     const handleResize = () => {
-        window.innerWidth < 786 ? setMobile(true) : setMobile(false)
+         setMobile(window.innerWidth < 768)
     }
     useEffect(() => {
         window.addEventListener('resize', handleResize)
@@ -23,7 +27,7 @@ function App() {
     return (
         <>
             <div className="app-container">
-                <UI mobileMode={isMobile} />
+                <UI />
 
                 <Canvas className={isMobile ? 'mobile' : 'desktop'} camera={{fov: 25}}>
                     <Scene />

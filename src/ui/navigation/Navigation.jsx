@@ -1,13 +1,15 @@
-import { forwardRef } from "react"
-import { useNavigationStore } from "../../States"
+import { useState, useRef, useLayoutEffect } from "react"
+import { useNavigationStore, useUIStore } from "../../States"
+import { gsap } from "gsap"
 import "./navigation.scss"
 
-const Navigation = forwardRef(function Navigation({ mobileMode }, ref){
+function Navigation(){
 
     const setFocus = useNavigationStore((state) => state.setFocus)
+    const isMobile = useUIStore((state) => state.isMobile)
 
     return(
-        <ul className={`planet-list ${mobileMode ? `mobile-list` : `desktop-list`}`} ref={ref}>
+        <ul className={`planet-list ${isMobile ? `mobile-list` : `desktop-list`}`}>
             <li onClick={() => setFocus("sun")}>
                 <img className="planet-icon" src="ui/UI_Sun.png" />
                 <div> The Sun </div>
@@ -43,5 +45,5 @@ const Navigation = forwardRef(function Navigation({ mobileMode }, ref){
             </li>
         </ul>
     )
-})
+}
 export default Navigation

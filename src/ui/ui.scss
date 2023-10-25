@@ -39,25 +39,26 @@
     z-index: 10;
 }
 
+.nav-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.m { width: 100%; }
+
 .navbar {
     position: relative;
     width: min-content;
-    // height: 100%;
     padding: 0.5rem;
     background: var(--ui-black);
     display: flex;
-    flex-direction: column; /* Adjust as needed */
+    flex-direction: column;
+    flex: 1;
 }
 
 .nav-mobile {
-    margin: 1rem 0;
-    width: 95%;
     z-index: 10;
+    width: auto;
     border-radius: 1rem;
-    overflow: scroll;
-}
-
-.menu-button {
-    background: transparent;
-    border: none;
+    overflow: hidden;
 }
