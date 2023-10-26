@@ -38,19 +38,7 @@ body {
     font-weight: 600;
 }
 
-.app-container {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-}
-
-
-.desktop { 
-    flex-grow: 1;
-}
-
-.mobile {
-    top: 0;
-    left: 0;
+.three-canvas {
     position: fixed !important;
 }
+

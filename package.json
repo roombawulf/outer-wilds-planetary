@@ -13,8 +13,8 @@
     "@fontsource-variable/jost": "^5.0.16",
     "@fontsource/space-mono": "^5.0.17",
     "@react-spring/three": "^9.7.3",
-    "@react-three/drei": "^9.88.5",
-    "@react-three/fiber": "^8.15.5",
+    "@react-three/drei": "^9.88.7",
+    "@react-three/fiber": "^8.15.7",
     "@react-three/postprocessing": "^2.15.8",
     "@tabler/icons-react": "^2.39.0",
     "gsap": "^3.12.2",
@@ -26,7 +26,7 @@
     "zustand": "^4.4.4"
   },
   "devDependencies": {
-    "@types/react": "^18.2.31",
+    "@types/react": "^18.2.32",
     "@types/react-dom": "^18.2.14",
     "@vitejs/plugin-react": "^4.1.0",
     "eslint": "^8.52.0",
@@ -35,7 +35,7 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "leva": "^0.9.35",
     "r3f-perf": "^7.1.2",
-    "sass": "^1.69.4",
+    "sass": "^1.69.5",
     "vite": "^4.5.0",
     "vite-plugin-glsl": "^1.1.2"
   }
