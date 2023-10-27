@@ -13,7 +13,7 @@ function Stars({ count }) {
         const p = new Float32Array(count * 3);
 
         for (let i = 0; i < count; i++) {
-            const distance = Math.random() < 0.5 ? 100.0 : 95.0
+            const distance = Math.random() < 0.5 ? 75.0 : 60.0
             const theta = MathUtils.randFloatSpread(360);
             const phi = MathUtils.randFloatSpread(360);
 

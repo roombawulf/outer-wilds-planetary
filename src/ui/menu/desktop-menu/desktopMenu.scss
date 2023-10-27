@@ -1,0 +1,10 @@
+.desktop-menu {
+    width: max-content;
+    display: flex;
+    gap: 2rem;
+    padding: 0.5rem 1rem;
+
+    background: var(--ui-black);
+    border: solid 1px var(--ui-gray);
+    border-radius: 0.2rem;
+}

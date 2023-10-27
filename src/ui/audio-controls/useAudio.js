@@ -15,7 +15,6 @@ function useAudio(){
             for (const planet in instruments) {
                 instruments[planet].play();
             }
-            instruments[focus].fade(instruments[focus].volume(), 0.15, 1000)
         }
     }, [isPlay])
 
@@ -29,7 +28,7 @@ function useAudio(){
     }, [isMute])
 
     useEffect(() => {
-        if( !isMute ) {
+        if( !isMute && !isHarmony ) {
             for (const planet in instruments) {
                 if (planet === focus) {
                     instruments[planet].fade(
@@ -46,27 +45,27 @@ function useAudio(){
                 }
             }
         }
-    },[isMute, focus])
+    },[isMute, isHarmony, focus])
 
-    // // orchestrate sounds method
-    // const orchestrate = () => {
-    //     for (const planet in instruments) {
-    //         if (toggle[planet]) {
-    //             instruments[planet].fade(
-    //                 instruments[planet].volume(),
-    //                 0.15,
-    //                 1000
-    //             );
-    //         } else {
-    //             instruments[planet].fade(
-    //                 instruments[planet].volume(),
-    //                 0.0,
-    //                 1000
-    //             );
-    //         }
-    //     }
-    // };
-
+    useEffect(() => {
+        if (!isMute && isHarmony) {
+            for (const planet in instruments) {
+                if (toggle[planet]) {
+                    instruments[planet].fade(
+                        instruments[planet].volume(),
+                        0.15,
+                        1000
+                    );
+                } 
+                else {
+                    instruments[planet].fade(
+                        instruments[planet].volume(),
+                        0.0,
+                        1000
+                    );
+                }
+            }
+        }
+    }, [isHarmony, isMute, toggle])
 }
-
 export default useAudio

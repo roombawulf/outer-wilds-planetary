@@ -13,7 +13,7 @@ function Planets(){
     const focus = useNavigationStore((state) => state.focus)
 
     return(
-        <group>
+        <group scale={0.2}>
             {/* Sun */}
             <mesh visible={focus === "sun"} name="sun">
                 <sphereGeometry />

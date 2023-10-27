@@ -2,8 +2,6 @@ import { EffectComposer } from "@react-three/postprocessing"
 import Astmosphere from "../shaders/post-processing/atmospheric-scattering/Atmosphere";
 import { useControls } from "leva";
 import { useNavigationStore } from "../States";
-import { useEffect } from "react";
-import { useState } from "react";
 
 function PlanetAtmosphere(){
 
@@ -22,8 +20,8 @@ function PlanetAtmosphere(){
     return (
         <EffectComposer>
             <Astmosphere
-                planetRadius={params.planetRadius[focus]}
-                atmosphereRadius={params.atmosphereRadius[focus]}
+                planetRadius={params.planetRadius[focus] * 0.2}
+                atmosphereRadius={params.atmosphereRadius[focus] * 0.2}
                 falloffFactor={params.falloffFactor[focus]}
                 sunIntensity={params.sunIntensity[focus]}
                 densityModifier={params.densityModifier[focus]}
