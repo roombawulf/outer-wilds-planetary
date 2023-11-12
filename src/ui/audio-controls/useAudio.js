@@ -19,7 +19,6 @@ function useAudio(){
     }, [isPlay])
 
     useEffect(() => {
-        console.log(isMute)
         if( isMute ) {
             for (const planet in instruments) {
                 instruments[planet].fade(instruments[planet].volume(), 0, 1000)

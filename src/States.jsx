@@ -1,7 +1,8 @@
+import { useEffect } from "react";
 import { create } from "zustand";
 
 export const useUIStore = create((set) => ({
-    isMobile: window.innerWidth < 768,
+    isMobile: window.innerWidth < 786,
     setMobile: (bool) => set({ isMobile: bool })
 }))
 

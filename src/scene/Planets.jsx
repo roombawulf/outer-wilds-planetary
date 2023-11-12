@@ -14,12 +14,6 @@ function Planets(){
 
     return(
         <group scale={0.2}>
-            {/* Sun */}
-            <mesh visible={focus === "sun"} name="sun">
-                <sphereGeometry />
-                <meshLambertMaterial />
-            </mesh>
-
             {/* Hourglass Twins */}
             <group visible={focus === "hour"} name="hour">
                 <EmberTwin />

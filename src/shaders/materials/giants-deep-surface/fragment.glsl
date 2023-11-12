@@ -1,4 +1,4 @@
-#define NUM_OCTAVES 5
+#define NUM_OCTAVES 4
 
 varying vec3 v_position;
 varying vec3 v_normal;

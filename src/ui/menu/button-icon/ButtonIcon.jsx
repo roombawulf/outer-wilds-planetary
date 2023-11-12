@@ -1,10 +1,13 @@
+import { useEffect } from "react"
 import "./buttonIcon.scss"
 
-function ButtonIcon({icon, children, ...props}){
+function ButtonIcon({icon, className, children, ...props}){
+
+    const classes = className ? className : ""
     return (
-        <button className="button" {...props}>
+        <button className={`button ${classes}`.trim()} {...props}>
             {icon && <img src={icon} />}
-            {children}
+            <span>{children}</span>
         </button>
     )
 }

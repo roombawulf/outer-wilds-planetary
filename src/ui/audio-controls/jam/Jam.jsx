@@ -15,13 +15,13 @@ export function Jam(){
     )
 }
 
-export function Instrument({planet}){
+export function Instrument({planet, color}){
     const toggle = useSoundStore((state) => state.toggle)
     const toggleInstrument = useSoundStore((state) => state.toggleInstrument)
     return(
         <ButtonIcon onClick={() => toggleInstrument(planet)}>
             {toggle[planet]
-                ? <IconMusic size={"100%"} color="var(--ui-orange)" />
+                ? <IconMusic size={"100%"} color={color} />
                 : <IconMusicOff size={"100%"} color="var(--ui-white)" />
             }
         </ButtonIcon>
