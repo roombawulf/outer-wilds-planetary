@@ -7,9 +7,10 @@ import {Jam, Instrument} from "./audio-controls/jam/Jam";
 import Mute from "./audio-controls/mute/Mute"
 
 import "./ui.scss"
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { IconPlanet } from "@tabler/icons-react";
-import { useState } from "react";
+import { useState } from "react"
+import { gsap } from "gsap";
 
 function DesktopUI(){
 
@@ -55,16 +56,23 @@ function MobileUI(){
     const focus = useNavigationStore((state) => state.focus)
     const setFocus = useNavigationStore((state) => state.setFocus)
 
-    // useEffect(() => {
-    //     setOpen(!open)
-    // },[focus])
+    useLayoutEffect(() => {
+        gsap.to(".planet-list", {
+            height: open ? "100%" : 0,
+            opacity: open ? 1 : 0,
+            duration: 0.25,
+            ease: "power2.inOut"
+        })
+    }, [open])
 
     return(
         <>
             <ButtonIcon onClick={() => setOpen(!open)} className="menu-button">
-                <IconPlanet size={"100%"} color="var(--ui-white)"/>
+                {open
+                    ? <IconPlanet size={"100%"} color="var(--ui-orange)"/>
+                    : <IconPlanet size={"100%"} color="var(--ui-white)"/> 
+                }
             </ButtonIcon>
-            {open &&
             <div className="planet-list">
                 <ButtonIcon icon={"ui/UI_CaveTwin.png"} onClick={() => setFocus('hour')}>
                     Hourglass Twins
@@ -82,7 +90,6 @@ function MobileUI(){
                     Dark Bramble
                 </ButtonIcon>
             </div>
-            }
         </>
     )
 }

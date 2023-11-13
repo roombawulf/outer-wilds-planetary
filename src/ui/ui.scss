@@ -15,8 +15,9 @@
 
 .planet-list {
     pointer-events: none;
+    overflow: hidden;
     position: absolute;
-    top: 3.5rem;
+    top: 4.5rem;
     padding-left: 1rem;
     display: flex;
     flex-direction: column;
@@ -36,6 +37,11 @@
     position: absolute;
     top: 1rem;
     left: 1rem;
+
+    background: var(--ui-black);
+    border: solid 1px var(--ui-gray);
+    padding: 5px;
+    border-radius: 10rem;
 }
 
 .desktop-menu {
