@@ -33,17 +33,6 @@
     }
 }
 
-.menu-button {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-
-    background: var(--ui-black);
-    border: solid 1px var(--ui-gray);
-    padding: 5px;
-    border-radius: 10rem;
-}
-
 .desktop-menu {
     width: max-content;
     display: flex;

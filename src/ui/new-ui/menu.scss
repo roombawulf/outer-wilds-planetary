@@ -1,0 +1,50 @@
+.menu {
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: fit-content;
+    gap: 0.5rem;
+
+    font-family: var(--ui-font);
+    color: var(--ui-white);
+}
+
+.menu-button {
+    cursor: pointer;
+    padding: 0.25rem 1rem;
+    font-family: var(--ui-font);
+    font-weight: 600;
+    color: var(--ui-white);
+    background: var(--ui-black);
+    border: solid 1px var(--ui-gray);
+    border-radius: 0.25rem;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+
+    background: var(--ui-black);
+    border: solid 1px var(--ui-gray);
+    border-radius: 0.25rem;
+}
+
+.menu-item {
+    cursor: pointer;
+    display: flex;
+    max-width: 100%;
+    padding: 0.25rem 1rem;
+    gap: 0.5rem;
+    transition: all 0.1s ease;
+
+    &:hover{
+        background: #444;
+    }
+}
