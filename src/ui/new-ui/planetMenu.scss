@@ -1,0 +1,22 @@
+.planet-button {
+    cursor: pointer;
+
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    padding: 0;
+    padding-right: 0.5rem;
+    gap: 0.25rem;
+
+    background-color: var(--ui-black);
+    color: var(--ui-white);
+    border: none;
+    border-radius: 0.25rem;
+    font-family: inherit;
+
+    transition: all 0.2s ease;
+    &:hover {
+        background: var(--ui-white);
+        color: var(--ui-black);
+    }
+}

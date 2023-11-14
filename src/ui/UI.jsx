@@ -8,11 +8,9 @@ import Mute from "./audio-controls/mute/Mute"
 
 import "./ui.scss"
 import { useEffect, useLayoutEffect } from "react";
-import { IconPlanet } from "@tabler/icons-react";
-import { useState } from "react"
-import { gsap } from "gsap";
 import { Menu, MenuItem } from "./new-ui/Menu";
 import { PlanetMenu } from "./new-ui/PlanetMenu";
+import { SoundMenu } from "./new-ui/SoundMenu";
 
 // function DesktopUI(){
 
@@ -111,7 +109,13 @@ function UI() {
 
     return(
         <>
-            <PlanetMenu />
+            <Menu title={"Menu"}>
+                <MenuItem> Planets </MenuItem>
+                <PlanetMenu />
+                {/* <hr /> */}
+                <MenuItem> Sound </MenuItem>
+                <SoundMenu />
+            </Menu>
             <Information />
             <SignalScope />
         </>

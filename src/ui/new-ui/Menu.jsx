@@ -46,13 +46,13 @@ export function Menu({title, children, ...props}){
     }, [open])
 
     return(
-        <nav className="menu" key={title}>
+        <menu className="menu" key={title}>
             <button className="menu-button" onClick={handleButtonClick} ref={menuButton}>
                 {title}
             </button>
             <ul className="menu-list" ref={menuList}>
                 {children}
             </ul>
-        </nav>
+        </menu>
     )
 }

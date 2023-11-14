@@ -1,4 +1,7 @@
 .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     position: relative;
     top: 1rem;
     left: 1rem;
@@ -19,7 +22,7 @@
     font-weight: 600;
     color: var(--ui-white);
     background: var(--ui-black);
-    border: solid 1px var(--ui-orange);
+    border: solid 2px var(--ui-orange);
     border-radius: 0.25rem;
 
     &:hover {
@@ -30,27 +33,19 @@
 
 .menu-list {
     list-style: none;
-    padding: 0;
+    padding: 0.5rem 0.5rem;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.1rem;
+    gap: 0.25rem;
 
     background: var(--ui-black);
-    border: solid 1px var(--ui-orange);
+    border: solid 2px var(--ui-orange);
     border-radius: 0.25rem;
 }
 
 .menu-item {
-    cursor: pointer;
     display: flex;
     max-width: 100%;
-    padding: 0.25rem 1rem;
     gap: 0.5rem;
-    transition: all 0.1s ease;
-
-    &:hover{
-        background: var(--ui-white);
-        color: var(--ui-black);
-    }
 }
