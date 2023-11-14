@@ -7,6 +7,7 @@ import EmberTwin from "../planets/EmberTwin";
 import TimberHearth from "../planets/TimberHearth";
 import GiantsDeep from "../planets/GiantsDeep";
 import DarkBramble from "../planets/DarkBramble";
+import QuantumMoon from "../planets/QuantumMoon";
 
 function Planets(){
 
@@ -31,6 +32,9 @@ function Planets(){
 
             {/* Dark Bramble */}
             <DarkBramble visible={focus == "bramble"} name="bramble" />
+
+            {/* Quantum Moon */}
+            <QuantumMoon name="quantum" />
         </group>
     )
 }
