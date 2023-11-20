@@ -1,7 +1,7 @@
+import { useRef } from "react";
 import { extend, useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { GiantsDeepSurfaceMaterial } from "../../shaders/materials/giants-deep-surface/GiantsDeepSurfaceMaterial";
-import { useRef } from "react";
 import Label from "../../ui/label/Label";
 
 extend({ GiantsDeepSurfaceMaterial })
@@ -18,6 +18,7 @@ function Surface(){
 
 
 function GiantsDeep(props) {
+    const planet = useRef(null)
     const { nodes, materials } = useGLTF(
         "planets/giants-deep/models/giants-deep.glb"
     );
@@ -25,8 +26,10 @@ function GiantsDeep(props) {
     const opc = useTexture("planets/giants-deep/textures/opc.webp");
     opc.flipY = false;
 
+    useFrame((state, delta) => planet.current.rotation.y = state.clock.elapsedTime * 0.1)
+
     return (
-        <group {...props} dispose={null}>
+        <group {...props} dispose={null} ref={planet}>
             <Label position={[4.0,0.5,5.0]} fontSize={0.1}>
                 Orbital Probe Cannon
             </Label>

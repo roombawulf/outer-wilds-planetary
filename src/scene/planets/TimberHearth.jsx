@@ -1,10 +1,11 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { useGLTF, useTexture, Text, meshBounds } from "@react-three/drei";
+import { useGLTF, useTexture } from "@react-three/drei";
 import Label from "../../ui/label/Label";
 
 
 function TimberHearth(props) {
+    const planet = useRef(null)
     const { nodes, materials } = useGLTF(
         "planets/timber-hearth/models/timber-hearth.glb"
     );
@@ -17,13 +18,11 @@ function TimberHearth(props) {
     terrain.flipY = false;
     structures.flipY = false;
 
-    const planet = useRef(null)
-
-    // useFrame((state,delta) => planet.current.rotation.y = state.clock.elapsedTime * 0.1)
+    useFrame((state,delta) => planet.current.rotation.y = state.clock.elapsedTime * 0.1)
 
     return (
 
-        <group ref={planet} {...props} dispose={null}>
+        <group {...props} dispose={null} ref={planet} >
             <Label position={[-2,4,0]} fontSize={0.15}>
                 Youngbark Crater
             </Label>

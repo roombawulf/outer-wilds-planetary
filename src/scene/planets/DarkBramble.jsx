@@ -1,8 +1,10 @@
+import { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture } from "@react-three/drei";
 
 function DarkBramble(props) {
+    const planet = useRef(null)
     const { nodes, materials } = useGLTF("planets/dark-bramble/models/dark-bramble.glb");
-
     const seed = useTexture("planets/dark-bramble/textures/seed.webp")
     const ice = useTexture("planets/dark-bramble/textures/ice.webp")
     const vines = useTexture("planets/dark-bramble/textures/vines.webp")
@@ -10,8 +12,10 @@ function DarkBramble(props) {
 
     seed.flipY = ice.flipY = vines.flipY = vines2.flipY = false
 
+    useFrame((state, delta) => planet.current.rotation.y = state.clock.elapsedTime * 0.1)
+
     return (
-        <group {...props} dispose={null}>
+        <group {...props} dispose={null} ref={planet}>
             <mesh
                 geometry={nodes["bramble-seed"].geometry}
                 position={[0, 0, 0]}

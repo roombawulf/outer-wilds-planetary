@@ -1,8 +1,7 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useFBO, useGLTF, useTexture } from "@react-three/drei";
-import { BlackHoleMaterial } from "../../shaders/materials/black-hole/BlackHoleMaterial";
 import { extend, useFrame, useThree } from "@react-three/fiber";
-import { useEffect } from "react";
+import { BlackHoleMaterial } from "../../shaders/materials/black-hole/BlackHoleMaterial";
 import Label from "../../ui/label/Label";
 
 extend({ BlackHoleMaterial });
@@ -41,13 +40,12 @@ function BlackHole() {
 }
 
 function BrittleHollow(props) {
+    const planet = useRef(null);
     const { nodes, materials } = useGLTF(
         "planets/brittle-hollow/models/brittle-hollow.glb"
     );
 
-    const groupRef = useRef(null);
-
-    // useFrame((state, delta) => groupRef.current.rotation.y = state.clock.elapsedTime * 0.1)
+    useFrame((state, delta) => planet.current.rotation.y = state.clock.elapsedTime * 0.1)
 
     const land1 = useTexture("planets/brittle-hollow/textures/land1.webp");
     const land2 = useTexture("planets/brittle-hollow/textures/land2.webp");
@@ -73,7 +71,7 @@ function BrittleHollow(props) {
             false;
 
     return (
-        <group {...props} dispose={null} ref={groupRef}>
+        <group {...props} dispose={null} ref={planet}>
 
             <Label position={[1.0,1.5,0]} fontSize={0.1}>
                 Hanging City

@@ -1,7 +1,10 @@
+import { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import Label from "../../ui/label/Label";
 
 function EmberTwin(props) {
+    const planet = useRef(null)
     const { nodes, materials } = useGLTF(
         "planets/hourglass-twins/models/ember-twin.glb"
     );
@@ -17,8 +20,10 @@ function EmberTwin(props) {
     );
     terrainTop.flipY = terrainBottom.flipY = structures.flipY = false;
 
+    useFrame((state, delta) => planet.current.rotation.y = state.clock.elapsedTime * 0.1)
+
     return (
-        <group {...props} dispose={null}>
+        <group {...props} dispose={null} ref={planet}>
             <Label position={[2.75, -2.0, 2.0]} fontSize={0.1}>
                 Escape Pod 2
             </Label>
