@@ -10,7 +10,7 @@ function App() {
 
     return (
         <>
-            <Canvas className="three-canvas" dpr={1.0} camera={{fov: 25}}>
+            <Canvas className="three-canvas" camera={{fov: 25}}>
                 <Scene />
             </Canvas>
 

@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { useFBO, useGLTF, useTexture } from "@react-three/drei";
-import { BlackHoleMaterial } from "../shaders/materials/black-hole/BlackHoleMaterial";
+import { BlackHoleMaterial } from "../../shaders/materials/black-hole/BlackHoleMaterial";
 import { extend, useFrame, useThree } from "@react-three/fiber";
 import { useEffect } from "react";
-import Label from "../ui/label/Label";
+import Label from "../../ui/label/Label";
 
 extend({ BlackHoleMaterial });
 

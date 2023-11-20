@@ -1,10 +1,10 @@
-import { useNavigationStore } from "../../States"
+import { useSolarSystemStore } from "../../States"
 import { useMemo } from "react"
 import "./information.scss"
 
 function Information() {
 
-    const focus = useNavigationStore( (state) => state.focus )
+    const focus = useSolarSystemStore( (state) => state.focus )
     
     const planets = useMemo(() => {
         return {

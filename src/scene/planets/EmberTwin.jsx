@@ -1,5 +1,5 @@
 import { useGLTF, useTexture } from "@react-three/drei";
-import Label from "../ui/label/Label";
+import Label from "../../ui/label/Label";
 
 function EmberTwin(props) {
     const { nodes, materials } = useGLTF(

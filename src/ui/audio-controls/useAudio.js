@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { instruments } from "../../globals/sound";
-import { useSoundStore, useNavigationStore} from "../../States";
+import { useSoundStore, useSolarSystemStore} from "../../States";
 
 function useAudio(){
 
-    const focus = useNavigationStore((state) => state.focus)
+    const focus = useSolarSystemStore((state) => state.focus)
     const isPlay = useSoundStore((state) => state.isPlay)
     const isMute = useSoundStore((state) => state.isMute)
     const isHarmony = useSoundStore((state) => state.isHarmony)

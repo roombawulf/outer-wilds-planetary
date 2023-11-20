@@ -1,5 +1,5 @@
-#define POINTS_FROM_CAMERA 8 // number sample points along camera ray
-#define OPTICAL_DEPTH_POINTS 8 // number sample points along light ray
+#define POINTS_FROM_CAMERA 4 // number sample points along camera ray
+#define OPTICAL_DEPTH_POINTS 4 // number sample points along light ray
 
 uniform vec3 cameraPos;
 uniform mat4 projectionMatrixInverse;

@@ -1,8 +1,8 @@
 import { extend, useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture } from "@react-three/drei";
-import { GiantsDeepSurfaceMaterial } from "../shaders/materials/giants-deep-surface/GiantsDeepSurfaceMaterial";
+import { GiantsDeepSurfaceMaterial } from "../../shaders/materials/giants-deep-surface/GiantsDeepSurfaceMaterial";
 import { useRef } from "react";
-import Label from "../ui/label/Label";
+import Label from "../../ui/label/Label";
 
 extend({ GiantsDeepSurfaceMaterial })
 function Surface(){

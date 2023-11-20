@@ -1,4 +1,4 @@
-import { useNavigationStore, useSoundStore, useUIStore } from "../States";
+import { useSolarSystemStore, useSoundStore, useUIStore } from "../States";
 import Information from "./information/Information";
 import SignalScope from "./signalscope/SignalScope";
 
@@ -14,7 +14,7 @@ import { SoundMenu } from "./new-ui/SoundMenu";
 
 // function DesktopUI(){
 
-//     const setFocus = useNavigationStore((state) => state.setFocus)
+//     const setFocus = useSolarSystemStore((state) => state.setFocus)
 //     const isHarmony = useSoundStore((state) => state.isHarmony)
 //     return(
 //         <>
@@ -53,8 +53,8 @@ import { SoundMenu } from "./new-ui/SoundMenu";
 // function MobileUI(){
 
 //     const [open, setOpen] = useState(false)
-//     const focus = useNavigationStore((state) => state.focus)
-//     const setFocus = useNavigationStore((state) => state.setFocus)
+//     const focus = useSolarSystemStore((state) => state.focus)
+//     const setFocus = useSolarSystemStore((state) => state.setFocus)
 
 //     useLayoutEffect(() => {
 //         gsap.to(".planet-list", {

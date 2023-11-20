@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture, Text, meshBounds } from "@react-three/drei";
-import Label from "../ui/label/Label";
+import Label from "../../ui/label/Label";
 
 
 function TimberHearth(props) {

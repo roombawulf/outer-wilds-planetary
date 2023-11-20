@@ -1,5 +1,5 @@
 import { useRef, useEffect, useMemo } from "react";
-import { useNavigationStore } from "../States";
+import { useSolarSystemStore } from "../States";
 import { useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
@@ -11,7 +11,7 @@ function CamControls() {
 
     const bBox = useMemo(() => new THREE.Box3(), [])
     const bSize = useMemo(() => new THREE.Vector3(), [])
-    const focus = useNavigationStore((state) => state.focus)
+    const focus = useSolarSystemStore((state) => state.focus)
 
 
     // useEffect(() => {

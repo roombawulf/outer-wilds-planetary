@@ -1,5 +1,5 @@
 import { useRef, useEffect, useMemo } from "react";
-import { useNavigationStore, useSoundStore } from "../../States";
+import { useSolarSystemStore, useSoundStore } from "../../States";
 import { instruments, analyser } from "../../globals/sound";
 import "./signalscope.scss";
 import useAudio from "../audio-controls/useAudio";

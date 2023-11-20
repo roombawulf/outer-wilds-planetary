@@ -6,16 +6,14 @@ export const useUIStore = create((set) => ({
     setMobile: (bool) => set({ isMobile: bool })
 }))
 
-export const useNavigationStore = create((set) => ({
+export const useSolarSystemStore = create((set) => ({
     focus: 'timber',
     analyse: true,
     active: false,
+    quantumObserved: false,
 
     setFocus: (item) => set({ focus: item }),
-    toggleAnalyse: () => set((state) => ({ analyse: !state.analyse }) ),
-
-    setActiveTrue: (bool) => set({ active: true }),
-    setActiveFalse: (bool) => set({ active: false }),
+    setQuantumObserved: (bool) => set({ quantumObserved: bool })
 }))
 
 export const useSoundStore = create((set) => ({

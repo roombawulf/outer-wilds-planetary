@@ -1,9 +1,7 @@
 import { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { extend, useFrame } from "@react-three/fiber";
-import { SandColumnMaterial } from "../shaders/materials/sand-column/SandColumnMaterial";
-import { DoubleSide, BackSide } from "three";
-import Label from "../ui/label/Label";
+import { SandColumnMaterial } from "../../shaders/materials/sand-column/SandColumnMaterial";
 
 extend({ SandColumnMaterial })
 

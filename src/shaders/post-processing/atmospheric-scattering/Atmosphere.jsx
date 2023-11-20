@@ -3,7 +3,7 @@ import { useThree } from "@react-three/fiber";
 import { AtmosphereEffect } from "./AtmosphereEffect";
 import { useEffect } from "react";
 
-function Astmosphere({
+function Atmosphere({
     sunPosition = [-50,0,0],
     planetPosition = [0,0,0],
     planetRadius,
@@ -18,6 +18,7 @@ function Astmosphere({
     const { scene, camera, size } = useThree();
 
     useEffect(() => {
+        api.current.planetPosition = planetPosition
         api.current.planetRadius = planetRadius
         api.current.atmosphereRadius = atmosphereRadius
         api.current.falloffFactor = falloffFactor
@@ -26,7 +27,7 @@ function Astmosphere({
         api.current.scatteringStrength = scatteringStrength
         api.current.wavelength = wavelength
         api.current.mainCamera = camera
-    }, [planetRadius, atmosphereRadius, falloffFactor, sunIntensity, densityModifier, scatteringStrength, wavelength, camera])
+    }, [planetPosition, planetRadius, atmosphereRadius, falloffFactor, sunIntensity, densityModifier, scatteringStrength, wavelength, camera])
 
     const effect = useMemo(
         () =>
@@ -47,4 +48,4 @@ function Astmosphere({
     );
     return <primitive object={effect} ref={api} />;
 }
-export default Astmosphere;
+export default Atmosphere;

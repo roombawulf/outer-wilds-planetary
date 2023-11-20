@@ -1,9 +1,9 @@
-import { useNavigationStore } from "../../States"
+import { useSolarSystemStore } from "../../States"
 import { MenuItem } from "./Menu"
 import "./planetMenu.scss"
 
 export function PlanetItem({planet, label}){
-    const setFocus = useNavigationStore((state) => state.setFocus)
+    const setFocus = useSolarSystemStore((state) => state.setFocus)
     return(
         <MenuItem>
             <button onClick={() => setFocus(planet)} className="planet-button">

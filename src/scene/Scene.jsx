@@ -1,12 +1,9 @@
 import { Suspense } from "react";
-import { Perf } from "r3f-perf";
 
-import Planets from "./Planets";
-import PlanetAtmosphere from "./PlanetAtmoshphere";
+import SolarSystem from "./SolarSystem";
 import Stars from "./Stars";
 
 import CamControls from "./CamControls";
-import CameraBounds from "./CameraBounds";
 
 function Lights() {
     return (
@@ -23,10 +20,9 @@ function Scene() {
         <>
 
             <Suspense>
-                <Planets />
+                <SolarSystem />
             </Suspense>
 
-            <PlanetAtmosphere />
             <Lights />
             <Stars count={1500} />
 
