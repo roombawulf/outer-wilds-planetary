@@ -1,17 +1,37 @@
-import { useState, useEffect, forwardRef } from "react"
+import { useState, useEffect, useRef, forwardRef } from "react"
 import { useSolarSystemStore } from "../../States"
 import { useFrame, useThree } from "@react-three/fiber"
+import { CloudySurfaceMaterial } from "../../shaders/materials/cloudy-surface/CloudySurfaceMaterial";
 import Label from "../../ui/label/Label";
+
+function SurfaceMaterial(){
+    const matRef = useRef(null)
+    useFrame((state, delta) => {
+        matRef.current.time = state.clock.elapsedTime
+    })
+
+    return (
+        <cloudySurfaceMaterial
+            topColor={"#868686"} 
+            botColor={"#868686"} 
+            midColor1={"#525669"} 
+            midColor2={"#525669"} 
+            midColor3={"#525669"} 
+            intensity={0.35}
+            key={CloudySurfaceMaterial.key} 
+            ref={matRef} 
+        />
+    )
+}
 
 const QuantumMoon = forwardRef(function QuantumMoon(props, ref){
 
     const focus = useSolarSystemStore((state) => state.focus)
     const quantumObserved = useSolarSystemStore((state) => state.quantumObserved)
     const setQuantumObserved = useSolarSystemStore((state) => state.setQuantumObserved)
-    // const [observed, setObserved] = useState(false)
     const [currentLocation, setLocation] = useState("deep")
+    const planets = ["hour", "timber", "brittle", "deep", "bramble"]
     const { scene } = useThree()
-    const planets = ["timber", "brittle", "deep", "bramble"]
 
     useFrame((state, delta) => {
         ref.current.position.x = 10.0 * Math.sin(state.clock.elapsedTime * 0.1)
@@ -50,7 +70,7 @@ const QuantumMoon = forwardRef(function QuantumMoon(props, ref){
             </Label>
             <mesh>
                 <sphereGeometry />
-                <meshBasicMaterial color={'#8a96a8'} />
+                <SurfaceMaterial />
             </mesh>
         </group>
     )

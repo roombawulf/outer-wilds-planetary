@@ -2,6 +2,13 @@
 
 varying vec3 v_position;
 varying vec3 v_normal;
+
+uniform vec3 topColor;
+uniform vec3 botColor;
+uniform vec3 midColor1;
+uniform vec3 midColor2;
+uniform vec3 midColor3;
+uniform float intensity;
 uniform float time;
 
 float max3 (vec3 v) {
@@ -47,12 +54,6 @@ vec3 generateSurface(vec3 x){
     f1 = vec3( fbm(x + 0.01 * time), fbm(x), fbm(x));
     f2 = vec3( fbm(x + f1 + 0.02 * time), fbm(x+f1), fbm(x+f1) );
     v = fbm(x + f2 + 0.05 * time);
-
-    vec3 topColor = vec3(0.0, 0.0, 0.1);
-    vec3 botColor = vec3(0.0, 0.0, 0.1);
-    vec3 midColor1 = vec3(0.0, 0.0, 0.2);
-    vec3 midColor2 = vec3(0.0, 0.2, 0.3);
-    vec3 midColor3 = vec3(0.0, 0.5, 0.0);
     
     vec3 midColor = mix( midColor1, midColor2, clamp(f2, 0.0, 1.0) );
     midColor = mix( midColor, midColor3, clamp(f1, 0.0, 1.0) );
@@ -71,11 +72,10 @@ vec3 generateSurface(vec3 x){
 
 
 vec3 lambertLighting( vec3 diffuse, vec3 normal ) {
-    vec3 lightColor = vec3( 0.75, 0.0, 0.0 );
-    vec3 lightPos = vec3( -25.0, 25.0, 0.0 );
+    vec3 lightPos = vec3( -25.0, 0.0, 0.0 );
 
     vec3 lightDir = normalize( lightPos - v_position );
-    vec3 color = dot( lightDir, normal ) * diffuse + ( diffuse * 0.5 );
+    vec3 color = dot( lightDir, normal ) * diffuse;
 
     return color;
 }
@@ -84,7 +84,8 @@ void main(){
     vec3 pos = v_position;
     vec3 normal = v_normal;
 
-    vec3 outColor = generateSurface( pos );
-    outColor = lambertLighting( outColor, normal);
+    vec3 surface = generateSurface( pos );
+
+    vec3 outColor = surface * intensity;
     gl_FragColor = vec4(outColor, 1.0);
 }

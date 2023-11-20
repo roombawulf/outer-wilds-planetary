@@ -1,18 +1,28 @@
 import { useRef } from "react";
 import { extend, useFrame } from "@react-three/fiber";
 import { useGLTF, useTexture } from "@react-three/drei";
-import { GiantsDeepSurfaceMaterial } from "../../shaders/materials/giants-deep-surface/GiantsDeepSurfaceMaterial";
+import { CloudySurfaceMaterial } from "../../shaders/materials/cloudy-surface/CloudySurfaceMaterial";
 import Label from "../../ui/label/Label";
+import { useControls } from "leva";
 
-extend({ GiantsDeepSurfaceMaterial })
+extend({ CloudySurfaceMaterial })
 function Surface(){
     const matRef = useRef(null)
     useFrame((state, delta) => {
         matRef.current.time = state.clock.elapsedTime
     })
-
+    
     return (
-        <giantsDeepSurfaceMaterial key={GiantsDeepSurfaceMaterial.key} ref={matRef} />
+        <cloudySurfaceMaterial 
+            topColor={"#516231"}
+            botColor={"#225200"}
+            midColor1={"#315255"}
+            midColor2={"#3b3900"}
+            midColor3={"#579600"}
+            intensity={0.08}
+            key={CloudySurfaceMaterial.key} 
+            ref={matRef} 
+        />
     )
 }
 
