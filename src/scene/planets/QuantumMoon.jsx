@@ -17,6 +17,7 @@ function SurfaceMaterial(){
             midColor1={"#525669"} 
             midColor2={"#525669"} 
             midColor3={"#525669"} 
+            octaves={2}
             intensity={0.35}
             key={CloudySurfaceMaterial.key} 
             ref={matRef} 
@@ -68,7 +69,7 @@ const QuantumMoon = forwardRef(function QuantumMoon(props, ref){
             <Label position={[0,1.2,0]} fontSize={0.1}>
                 Quantum Moon
             </Label>
-            <mesh>
+            <mesh scale={0.6}>
                 <sphereGeometry />
                 <SurfaceMaterial />
             </mesh>

@@ -6,6 +6,7 @@ import fragment from "./fragment.glsl"
 export const CloudySurfaceMaterial = shaderMaterial(
     { 
         time: 0.0,
+        octaves: 4,
         intensity: 0.5,
         topColor: new Color(0, 0, 0.1),
         botColor: new Color(0, 0, 0.1),

@@ -1,15 +1,16 @@
-#define NUM_OCTAVES 4
-
 varying vec3 v_position;
 varying vec3 v_normal;
+
+uniform int octaves;
+uniform float intensity;
+uniform float time;
 
 uniform vec3 topColor;
 uniform vec3 botColor;
 uniform vec3 midColor1;
 uniform vec3 midColor2;
 uniform vec3 midColor3;
-uniform float intensity;
-uniform float time;
+
 
 float max3 (vec3 v) {
     return max (max (v.x, v.y), v.z);
@@ -35,7 +36,7 @@ float fbm(vec3 x) {
 	float v = 0.0;
 	float a = 0.5;
 	vec3 shift = vec3(100.0);
-	for (int i = 0; i < NUM_OCTAVES; ++i) {
+	for (int i = 0; i < octaves; ++i) {
 		v += a * noise(x);
 		x = x * 2.0 + shift;
 		a *= 0.5;

@@ -21,37 +21,84 @@ function PlanetAtmosphere({ moon }){
         }
     })
 
-    const params = {
-        planetRadius: { hour: 1.5, timber: 4.0, brittle: 0.1, deep: 0.1, bramble: 0.1, quantum: 0.1 },
-        atmosphereRadius: { hour: 4.5, timber: 5.0, brittle: 5.0, deep: 6.0, bramble: 1.5, quantum: 1.3 },
-        falloffFactor: { hour: 3.0, timber: 1.0, brittle: 1.2, deep: 12.8, bramble: 3.0, quantum: 1.5 },
-        sunIntensity: { hour: 5.0, timber: 2.0, brittle: 1.0, deep: 2.0, bramble: 4.0, quantum: 4.0 },
-        densityModifier: { hour: 0.1, timber: 0.01, brittle: 0.01, deep: 8.5, bramble: 0.01, quantum: 0.01 },
-        scatteringStrength: { hour: 2.0, timber: 2.0, brittle: 0.1, deep: 12.0, bramble: 15.0, quantum: 15.0 },
-        wavelength: { hour: [540,810,999], timber: [542,405,337], brittle: [476,879,359], deep: [457,262,253], bramble: [810,820,820], quantum: [810,810,835] },
+    const atmosphere = {
+        hour: {
+            planetR: 1.5,
+            atmosphereR: 4.5,
+            falloff: 3.0,
+            intensity: 5.0,
+            density: 0.1,
+            scatter: 2.0,
+            wavelength: [540,810,999],
+        },
+        timber: {
+            planetR: 4.0,
+            atmosphereR: 5.0,
+            falloff: 1.0,
+            intensity: 2.0,
+            density: 0.01,
+            scatter: 2.0,
+            wavelength: [542,405,337],
+        },
+        brittle: {
+            planetR: 0.1,
+            atmosphereR: 5.0,
+            falloff: 1.2,
+            intensity: 1.0,
+            density: 0.01,
+            scatter: 0.1,
+            wavelength: [476,879,359],
+        },
+        deep: {
+            planetR: 1.5,
+            atmosphereR: 5.5,
+            falloff: 1.2,
+            intensity: 3.0,
+            density: 0.02,
+            scatter: 8.0,
+            wavelength: [600,430,480],
+        },
+        bramble: {
+            planetR: 0.1,
+            atmosphereR: 1.5,
+            falloff: 3.0,
+            intensity: 4.0,
+            density: 0.01,
+            scatter: 15.0,
+            wavelength: [810,820,820],
+        },
+        quantum: {
+            planetR: 0.1,
+            atmosphereR: 0.75,
+            falloff: 4.0,
+            intensity: 6.0,
+            density: 0.05,
+            scatter: 15.0,
+            wavelength: [810,810,835],
+        }
     }
 
     return (
         <EffectComposer>
             <Atmosphere
-                planetRadius={params.planetRadius[focus] * 0.2}
-                atmosphereRadius={params.atmosphereRadius[focus] * 0.2}
-                falloffFactor={params.falloffFactor[focus]}
-                sunIntensity={params.sunIntensity[focus]}
-                densityModifier={params.densityModifier[focus]}
-                scatteringStrength={params.scatteringStrength[focus]}
-                wavelength={params.wavelength[focus]}
+                planetRadius={atmosphere[focus].planetR * 0.2}
+                atmosphereRadius={atmosphere[focus].atmosphereR * 0.2}
+                falloffFactor={atmosphere[focus].falloff}
+                sunIntensity={atmosphere[focus].intensity}
+                densityModifier={atmosphere[focus].density}
+                scatteringStrength={atmosphere[focus].scatter}
+                wavelength={atmosphere[focus].wavelength}
             />
             { quantumObserved && 
                 <Atmosphere
                     planetPosition={_array}
-                    planetRadius={params.planetRadius['quantum'] * 0.2}
-                    atmosphereRadius={params.atmosphereRadius['quantum'] * 0.2}
-                    falloffFactor={params.falloffFactor['quantum']}
-                    sunIntensity={params.sunIntensity['quantum']}
-                    densityModifier={params.densityModifier['quantum']}
-                    scatteringStrength={params.scatteringStrength['quantum']}
-                    wavelength={params.wavelength['quantum']}
+                    planetRadius={atmosphere['quantum'].planetR * 0.2}
+                    atmosphereRadius={atmosphere['quantum'].atmosphereR * 0.2}
+                    falloffFactor={atmosphere['quantum'].falloff}
+                    sunIntensity={atmosphere['quantum'].intensity}
+                    densityModifier={atmosphere['quantum'].density}
+                    scatteringStrength={atmosphere['quantum'].scatter}
+                    wavelength={atmosphere['quantum'].wavelength}
                 />
             }
         </EffectComposer>
