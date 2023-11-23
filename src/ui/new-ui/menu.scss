@@ -1,4 +1,6 @@
 .menu {
+    pointer-events: none;
+
     list-style: none;
     padding: 0;
     margin: 0;
@@ -16,6 +18,8 @@
 }
 
 .menu-button {
+    pointer-events: auto;
+
     cursor: pointer;
     padding: 0.25rem 1rem;
     font-family: var(--ui-font);
