@@ -13,7 +13,9 @@
 }
 
 .info__icon {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     img {
         max-width: 50px;
@@ -25,6 +27,7 @@
 .info__text {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .name {
@@ -33,7 +36,7 @@
 
     font-family: var(--ui-font);
     font-weight: 600;
-    font-size: x-large;
+    font-size: clamp(1rem, 5vw, 2rem);
     letter-spacing: 3px;
     text-transform: uppercase;
 
@@ -46,7 +49,7 @@
 
     font-family: var(--ui-font);
     font-weight: 600;
-    font-size: medium;
+    font-size: clamp(0.5rem, 4vw, 1rem);
     letter-spacing: 1px;
 
     color: var(--ui-white);

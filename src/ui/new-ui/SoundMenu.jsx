@@ -46,7 +46,7 @@ export function SoundMenu(){
     useEffect(() => {
         gsap.to(".instruments-panel", {
             opacity: isHarmony ? '100%' : '25%',
-            pointerEvents: isHarmony ? 'auto' : 'none',
+            pointerEvents: isHarmony ? 'inherit' : 'none',
             duration: 0.2
         })
     }, [isHarmony])
