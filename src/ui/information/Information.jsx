@@ -17,9 +17,14 @@ function Information() {
     },[])
 
     return(
-        <div className="info-container">
-            <div className='planet-gravity'> GRAVITY: { planets[focus].gravity } </div>
-            <div className='planet-name'> { planets[focus].name } </div>
+        <div className="info">
+            <div className="info__icon">
+                <img src={`ui/UI_${focus}.png`} />
+            </div>
+            <div className="info__text">
+                <div className="gravity"> GRAVITY: { planets[focus].gravity } </div>
+                <div className="name"> { planets[focus].name } </div>
+            </div>
         </div>
     )
 }

@@ -1,18 +1,33 @@
-.info-container {
+.info {
     user-select: none;
     -webkit-user-select: none;
 
     position: absolute;
     z-index: 10;
     display: flex;
-    flex-direction: column;
+    gap: 1rem;
     width: fit-content;
 
     bottom: 1rem;
     left: 1rem;
 }
 
-.planet-name {
+.info__icon {
+    display: inline-flex;
+
+    img {
+        max-width: 50px;
+        height: 50px;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+.info__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
     user-select: none;
     -webkit-user-select: none;
 
@@ -25,7 +40,7 @@
     color: var(--ui-orange);
 }
 
-.planet-gravity {
+.gravity {
     user-select: none;
     -webkit-user-select: none;
 
