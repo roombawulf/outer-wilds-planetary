@@ -20,15 +20,21 @@
     padding: 0.25rem 1rem;
     font-family: var(--ui-font);
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
     color: var(--ui-white);
     background: var(--ui-black);
     border: solid 2px var(--ui-orange);
-    border-radius: 0.25rem;
 
-    &:hover {
-        background: var(--ui-white);
-        color: var(--ui-black);
+    transition: all 0.2s ease;
+
+    @media (hover: hover){
+        &:hover {
+            background: var(--ui-white);
+            color: var(--ui-black);
+        }
     }
+    
 }
 
 .menu-list {
@@ -41,11 +47,15 @@
 
     background: var(--ui-black);
     border: solid 2px var(--ui-orange);
-    border-radius: 0.25rem;
 }
 
 .menu-item {
+    color: var(--ui-orange);
     display: flex;
+    justify-content: center;
     max-width: 100%;
     gap: 0.5rem;
+
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }

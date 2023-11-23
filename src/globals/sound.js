@@ -26,6 +26,12 @@ const whistle = new Howl({
     volume: 0.0,
 })
 
+const piano = new Howl({
+    src: ["sounds/piano.ogg"],
+    loop: true,
+    volume: 0.0,
+})
+
 export const analyser = Howler.ctx.createAnalyser()
 Howler.masterGain.disconnect()
 Howler.masterGain.connect(analyser)
@@ -34,9 +40,10 @@ analyser.connect(Howler.ctx.destination)
 
 export const instruments = {
     hour: drums,
-    timber: banjo,
-    brittle: whistle,
+    timber: whistle,
+    brittle: banjo,
     deep: flute,
-    bramble: harmonica
+    bramble: harmonica,
+    quantum: piano,
 }
 

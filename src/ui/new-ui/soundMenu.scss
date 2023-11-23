@@ -1,21 +1,40 @@
-.sound-button {
+.sound-button, .instrument-button {
     cursor: pointer;
 
     display: flex;
     flex-grow: 1;
     align-items: center;
-    padding: 0;
+    justify-content: center;
+    padding: 0.25rem 0.5rem;
     gap: 0.25rem;
 
-    background-color: var(--ui-black);
+    background-color: #50505040;
     color: var(--ui-white);
     border: none;
-    border-radius: 0.25rem;
     font-family: inherit;
+    letter-spacing: 1px;
 
     transition: all 0.2s ease;
-    &:hover {
-        background: var(--ui-white);
-        color: var(--ui-black);
+
+    @media (hover: hover){
+        &:hover {
+            background: var(--ui-white);
+            color: var(--ui-black);
+        }
     }
 }
+
+.instrument-button {
+    flex-basis: 25%;
+}
+
+.instruments-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+
+    span {
+        display: inline-flex;
+    }
+}
+

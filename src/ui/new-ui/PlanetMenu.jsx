@@ -7,9 +7,6 @@ export function PlanetItem({planet, label}){
     return(
         <MenuItem>
             <button onClick={() => setFocus(planet)} className="planet-button">
-                <span style={{display: 'inherit'}}>
-                    <img src={`ui/UI_${planet}.png`} width={'25px'} />
-                </span>
                 <span>{label}</span>
             </button>
         </MenuItem>
