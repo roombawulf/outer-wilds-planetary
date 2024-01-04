@@ -2,9 +2,10 @@ import { useRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import Label from "../../ui/label/Label";
+import Smoke from "../../shaders/materials/smoke/Smoke";
 
 function EmberTwin(props) {
-    const planet = useRef(null)
+    const planet = useRef(null);
     const { nodes, materials } = useGLTF(
         "planets/hourglass-twins/models/ember-twin.glb"
     );
@@ -20,7 +21,10 @@ function EmberTwin(props) {
     );
     terrainTop.flipY = terrainBottom.flipY = structures.flipY = false;
 
-    useFrame((state, delta) => planet.current.rotation.y = state.clock.elapsedTime * 0.1)
+    useFrame(
+        (state, delta) =>
+            (planet.current.rotation.y = state.clock.elapsedTime * 0.1)
+    );
 
     return (
         <group {...props} dispose={null} ref={planet}>
@@ -39,7 +43,6 @@ function EmberTwin(props) {
             <Label position={[0, 3.5, 0]} fontSize={0.1}>
                 Chert's Camp
             </Label>
-
 
             <mesh
                 geometry={nodes["terrain-bottom"].geometry}
@@ -62,11 +65,15 @@ function EmberTwin(props) {
             >
                 <meshLambertMaterial map={structures} />
             </mesh>
+
+            <Smoke position={[0, 5, 0]} scale={0.3} />
         </group>
     );
 }
 export default EmberTwin;
 useGLTF.preload("planets/hourglass-twins/models/ember-twin.glb");
 useTexture.preload("planets/hourglass-twins/textures/ember-terrain-top.webp");
-useTexture.preload("planets/hourglass-twins/textures/ember-terrain-bottom.webp");
+useTexture.preload(
+    "planets/hourglass-twins/textures/ember-terrain-bottom.webp"
+);
 useTexture.preload("planets/hourglass-twins/textures/ember-structures.webp");

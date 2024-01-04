@@ -5,14 +5,12 @@ import { OrbitControls } from "@react-three/drei";
 import * as THREE from "three";
 
 function CamControls() {
-
-    const { scene, camera, size } = useThree()
+    const { scene, camera, size } = useThree();
     const controlsRef = useRef(null);
 
-    const bBox = useMemo(() => new THREE.Box3(), [])
-    const bSize = useMemo(() => new THREE.Vector3(), [])
-    const focus = useSolarSystemStore((state) => state.focus)
-
+    const bBox = useMemo(() => new THREE.Box3(), []);
+    const bSize = useMemo(() => new THREE.Vector3(), []);
+    const focus = useSolarSystemStore((state) => state.focus);
 
     // useEffect(() => {
 
@@ -34,8 +32,7 @@ function CamControls() {
 
     // }, [focus])
 
-    return <OrbitControls makeDefault ref={controlsRef} enablePan={false} />
-
+    return <OrbitControls makeDefault ref={controlsRef} enablePan={true} />;
 }
 
-export default CamControls
+export default CamControls;

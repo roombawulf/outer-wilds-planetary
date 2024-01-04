@@ -11,39 +11,38 @@ import QuantumMoon from "./planets/QuantumMoon";
 
 import PlanetAtmosphere from "./PlanetAtmosphere";
 
-function SolarSystem(){
+function SolarSystem() {
+    const focus = useSolarSystemStore((state) => state.focus);
+    const moon = useRef(null);
 
-    const focus = useSolarSystemStore((state) => state.focus)
-    const moon = useRef(null)
-
-    return(
+    return (
         <>
-        <group scale={0.2}>
-            {/* Hourglass Twins */}
-            <group visible={focus === "hour"} name="hour">
-                <EmberTwin />
-                <AshTwin />
+            <group scale={0.2}>
+                {/* Hourglass Twins */}
+                <group visible={focus === "hour"} name="hour">
+                    <EmberTwin />
+                    <AshTwin />
+                </group>
+
+                {/* Timber Hearth */}
+                <TimberHearth visible={focus === "timber"} name="timber" />
+
+                {/* Brittle Hollow */}
+                <BrittleHollow visible={focus === "brittle"} name="brittle" />
+
+                {/* Giants Deep */}
+                <GiantsDeep visible={focus === "deep"} name="deep" />
+
+                {/* Dark Bramble */}
+                <DarkBramble visible={focus == "bramble"} name="bramble" />
+
+                {/* Quantum Moon */}
+                <QuantumMoon name="quantum" ref={moon} />
             </group>
 
-            {/* Timber Hearth */}
-            <TimberHearth visible={focus === "timber"} name="timber" />
-
-            {/* Brittle Hollow */}
-            <BrittleHollow visible={focus === "brittle"} name="brittle" />
-
-            {/* Giants Deep */}
-            <GiantsDeep visible={focus === "deep"} name="deep" />
-
-            {/* Dark Bramble */}
-            <DarkBramble visible={focus == "bramble"} name="bramble" />
-
-            {/* Quantum Moon */}
-            <QuantumMoon name="quantum" ref={moon} />
-        </group>
-
-        <PlanetAtmosphere moon={moon}/>
+            <PlanetAtmosphere moon={moon} />
         </>
-    )
+    );
 }
 
-export default SolarSystem
+export default SolarSystem;
