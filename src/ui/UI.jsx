@@ -3,10 +3,10 @@ import Information from "./information/Information";
 import SignalScope from "./signalscope/SignalScope";
 
 import ButtonIcon from "./menu/button-icon/ButtonIcon";
-import {Jam, Instrument} from "./audio-controls/jam/Jam";
-import Mute from "./audio-controls/mute/Mute"
+import { Jam, Instrument } from "./audio-controls/jam/Jam";
+import Mute from "./audio-controls/mute/Mute";
 
-import "./ui.scss"
+import "./ui.scss";
 import { useEffect, useLayoutEffect } from "react";
 import { Menu, MenuItem } from "./new-ui/Menu";
 import { PlanetMenu } from "./new-ui/PlanetMenu";
@@ -35,7 +35,7 @@ import { SoundMenu } from "./new-ui/SoundMenu";
 //             </div>
 //         </div>
 
-//         {isHarmony && 
+//         {isHarmony &&
 //         <div className="jam-ctrls">
 //         <div className="desktop-menu">
 //             <Instrument planet={"hour"} color={'yellow'} />
@@ -45,7 +45,7 @@ import { SoundMenu } from "./new-ui/SoundMenu";
 //             <Instrument planet={"bramble"} color={'brown'}/>
 //         </div>
 //         </div>
-//         }       
+//         }
 //         </>
 //     )
 // }
@@ -70,7 +70,7 @@ import { SoundMenu } from "./new-ui/SoundMenu";
 //             <ButtonIcon onClick={() => setOpen(!open)} className="menu-button">
 //                 {open
 //                     ? <IconPlanet size={"100%"} color="var(--ui-orange)"/>
-//                     : <IconPlanet size={"100%"} color="var(--ui-white)"/> 
+//                     : <IconPlanet size={"100%"} color="var(--ui-white)"/>
 //                 }
 //             </ButtonIcon>
 //             <div className="planet-list">
@@ -95,30 +95,32 @@ import { SoundMenu } from "./new-ui/SoundMenu";
 // }
 
 function UI() {
-
-    const isMobile = useUIStore((state) => state.isMobile)
-    const setMobile = useUIStore((state) => state.setMobile)
+    const isMobile = useUIStore((state) => state.isMobile);
+    const setMobile = useUIStore((state) => state.setMobile);
 
     const onResize = (e) => {
-        setMobile(window.innerWidth < 768)
-    }
+        setMobile(window.innerWidth < 768);
+    };
     useEffect(() => {
-        window.addEventListener('resize', onResize)
-        return () => window.removeEventListener('resize', onResize)
-    },[])
+        window.addEventListener("resize", onResize);
+        return () => window.removeEventListener("resize", onResize);
+    }, []);
 
-    return(
+    return (
         <>
             <Menu title={"Menu"}>
                 <MenuItem> Planets </MenuItem>
                 <PlanetMenu />
-                {/* <hr /> */}
                 <MenuItem> Sound </MenuItem>
                 <SoundMenu />
             </Menu>
-            <Information />
-            <SignalScope />
+            <div className="ui-center">
+                <div className="ui-container">
+                    <Information />
+                    <SignalScope />
+                </div>
+            </div>
         </>
-    )
+    );
 }
-export default UI
+export default UI;

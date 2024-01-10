@@ -29,7 +29,7 @@ function Scene() {
             </Suspense>
 
             <Lights />
-            <Stars count={2000} />
+            <Stars count={5000} />
             <CamControls />
         </>
     );

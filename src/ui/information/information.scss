@@ -2,14 +2,10 @@
     user-select: none;
     -webkit-user-select: none;
 
-    position: absolute;
     z-index: 10;
     display: flex;
     gap: 1rem;
     width: fit-content;
-
-    bottom: 1rem;
-    left: 1rem;
 }
 
 .info__icon {

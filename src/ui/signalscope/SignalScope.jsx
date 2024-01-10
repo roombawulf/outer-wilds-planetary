@@ -5,11 +5,10 @@ import "./signalscope.scss";
 import useAudio from "../audio-controls/useAudio";
 
 function SignalScope() {
-
     const canvasRef = useRef(null);
     const bufferLen = analyser.frequencyBinCount;
     const dataArray = useMemo(() => new Uint8Array(bufferLen), []);
-    useAudio()
+    useAudio();
 
     // draw method for canvas
     const draw = (ctx) => {
@@ -23,7 +22,7 @@ function SignalScope() {
         const sliceWidth = ctx.canvas.width / bufferLen;
         let x = 0;
         for (let i = 0; i < bufferLen; i++) {
-            const v = (8 * dataArray[i]) / 128.0 - 7.0;
+            const v = (10 * dataArray[i]) / 128.0 - 9.0;
             const y = (v * ctx.canvas.height) / 2;
 
             if (i === 0) {
@@ -43,8 +42,7 @@ function SignalScope() {
     useEffect(() => {
         const canvas = canvasRef.current;
         const context = canvas.getContext("2d");
-        context.canvas.width = window.innerWidth / 3;
-        context.canvas.height = window.innerWidth / 32;
+        context.canvas.height = 30;
         let animationFrameId;
 
         const render = () => {
@@ -58,25 +56,22 @@ function SignalScope() {
         };
     }, [draw]);
 
-    const handleResize = (context) => {
-        context.canvas.width = window.innerWidth / 3;
-        context.canvas.height = window.innerWidth / 32;
-    };
+    // const handleResize = (context) => {
+    //     context.canvas.height = window.innerWidth / 32;
+    // };
 
-    // resize canvas event listener
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        const context = canvas.getContext("2d");
-        window.addEventListener("resize", () => handleResize(context));
+    // // resize canvas event listener
+    // useEffect(() => {
+    //     const canvas = canvasRef.current;
+    //     const context = canvas.getContext("2d");
+    //     window.addEventListener("resize", () => handleResize(context));
 
-        return () => {
-            window.removeEventListener("resize", () => handleResize(context));
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener("resize", () => handleResize(context));
+    //     };
+    // }, []);
 
-    return (
-        <canvas className="signalscope" ref={canvasRef}></canvas>
-    );
+    return <canvas className="signalscope" ref={canvasRef}></canvas>;
 }
 
 export default SignalScope;

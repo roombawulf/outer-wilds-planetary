@@ -77,3 +77,20 @@ hr {
     width: 90%;
     color: var(--ui-gray);
 }
+
+.ui-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.ui-center {
+    position: absolute;
+    bottom: 1vh;
+    left: 1vw;
+    display: flex;
+    width: 100%;
+
+    @media screen and (max-width: 768px) {
+        justify-content: center;
+    }
+}
